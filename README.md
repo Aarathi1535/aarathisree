@@ -19,7 +19,8 @@
 ### **Project and Research Intern @ Society for Data Science** (_May 2024 - August 2024_)  
 - Developed an **automated grading system** integrating OCR, PyTesseract, Gemini 1.5 Pro, and ML in **Python**, achieving **86.5% accuracy**.  
 - Engineered text recognition and scoring models, coordinating research efforts.  
-- Contributed to drafting a **research paper** based on project outcomes and insights.  
+- Contributed to drafting a **research paper** based on project outcomes and insights.
+- **Demo Link:** [Edu Evaluator Demo](https://www.youtube.com/watch?v=tSZsixcv9Sw)
 
 ### **Python Project Intern @ Infosys Springboard** (_April 2024 - June 2024_)  
 - Engineered an **Automated Bank Cheque Extraction System** using **OpenCV, OCR, and Python**.  
@@ -34,7 +35,8 @@
 ### [AgriCure](https://crop-recommendation-system-app.onrender.com/login)  
 **Technologies:** Python, Machine Learning, Flask, Power BI  
 - Developed a **crop recommendation website** integrating **Decision Tree, Random Forest, Flask, and MySQL**.  
-- Engineered **ML models** to boost accuracy to **93.5%**, surpassing existing solutions.  
+- Engineered **ML models** to boost accuracy to **93.5%**, surpassing existing solutions.
+- **Demo Link:** [AgriCure Demo](https://www.youtube.com/watch?v=w7U0d4vgMbo)
 
 ### [AI Chatbot for Grievance Redressal](https://app.engati.com/static/standalone/standalone.html?bot_key=7984c1d4deac42ec&env=p)  
 **Technologies:** Python, Artificial Intelligence  
