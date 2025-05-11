@@ -9,7 +9,12 @@
         
         <!--==================== SWIPER CSS ====================-->
         <link rel="stylesheet" href="./packages/css/swiper-bundle.min.css">
-        
+        <!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
         <!--==================== CSS ====================-->
         <link rel="stylesheet" href="./packages/css/styles.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
@@ -587,6 +592,7 @@
         </section>
         <!--==================== PROJECTS ====================-->
         <section class="portfolio section" id="projects">
+            <div class="swiper testimonial__container">
     <h2 class="section__title">Projects</h2>
     <span class="section__subtitle">Recent Work</span>
 
@@ -723,6 +729,8 @@
         <!-- Add Pagination -->
         <div class="swiper-pagination"></div>
     </div>
+            </div>
+            
 </section>
 
 
@@ -1043,6 +1051,30 @@
       },
       768: {
         slidesPerView: 3,
+      },
+      1024: {
+        slidesPerView: 3,
+      },
+    },
+  });
+</script>
+<script>
+  new Swiper(".testimonial__container", {
+    loop: true,
+    grabCursor: true,
+    spaceBetween: 30,
+    slidesPerView: 1,
+    pagination: {
+      el: ".swiper-pagination-testimonial",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
       },
       1024: {
         slidesPerView: 3,
