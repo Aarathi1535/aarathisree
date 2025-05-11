@@ -14,6 +14,8 @@
         <link rel="stylesheet" href="./packages/css/styles.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+        <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 
 
         <title>Aarathisree Balla</title>
@@ -757,7 +759,7 @@
                                 <img src="./packages/images/gfg.jpg" alt="" class="testimonial__img">
                                 <div>
                                     <h3 class="testimonial__name">Campus Mantri</h3>
-                                    <span class="testimonial__client">GeeksforGeeks (Aug 2024 - Present)</span>
+                                    <span class="testimonial__client">GeeksforGeeks (August 2024 - April 2025)</span>
                                 </div>
                             </div>
                         </div>
@@ -1020,6 +1022,32 @@
       color: isDark ? 0xffffff : 0x00bcd4,
       backgroundColor: isDark ? 0x0d1117 : 0xf8f9fa
     });
+  });
+</script>
+<script>
+  var swiper = new Swiper(".testimonial__container", {
+    loop: true,
+    spaceBetween: 30,
+    grabCursor: true,
+    pagination: {
+      el: ".swiper-pagination-testimonial",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      568: {
+        slidesPerView: 2,
+      },
+      768: {
+        slidesPerView: 3,
+      },
+      1024: {
+        slidesPerView: 3,
+      },
+    },
   });
 </script>
 
