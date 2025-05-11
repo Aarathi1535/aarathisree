@@ -1363,3 +1363,16 @@ img {
   border-radius: 50%;
 }
 
+.testimonial__container {
+  overflow: hidden;
+  padding-bottom: 2rem;
+}
+
+.swiper-wrapper {
+  display: flex;
+}
+
+.swiper-slide {
+  width: auto;
+  flex-shrink: 0;
+}
