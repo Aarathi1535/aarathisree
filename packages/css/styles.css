@@ -4,12 +4,7 @@
 /*==================== VARIABLES CSS ====================*/
 :root {
   --header-height: 3rem;
-
-  /*========== Colors ==========*/
-  /* Change favorite color */
-  --hue-color: 190; /*Purple 250 - Green 142 - Blue 230 - Pink 340*/
-
-  /* HSL color mode */
+  --hue-color: 190;
   --first-color: hsl(var(--hue-color), 69%, 61%);
   --first-color-second: hsl(var(--hue-color), 69%, 61%);
   --first-color-alt: hsl(var(--hue-color), 57%, 53%);
@@ -22,11 +17,7 @@
   --container-color: #fff;
   --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
   --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
-
-  /*========== Font and typography ==========*/
   --body-font: "Poppins", sans-serif;
-
-  /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
   --big-font-size: 2rem;
   --h1-font-size: 1.5rem;
   --h2-font-size: 1.25rem;
@@ -34,13 +25,8 @@
   --normal-font-size: 0.938rem;
   --small-font-size: 0.813rem;
   --smaller-font-size: 0.75rem;
-
-  /*========== Font weight ==========*/
   --font-medium: 500;
   --font-semi-bold: 600;
-
-  /*========== Margenes Bottom ==========*/
-  /* .25rem = 4px, .5rem = 8px, .75rem = 12px ... */
   --mb-0-25: 0.25rem;
   --mb-0-5: 0.5rem;
   --mb-0-75: 0.75rem;
@@ -49,14 +35,11 @@
   --mb-2: 2rem;
   --mb-2-5: 2.5rem;
   --mb-3: 3rem;
-
-  /*========== z index ==========*/
   --z-tooltip: 10;
   --z-fixed: 100;
   --z-modal: 1000;
 }
 
-/* Font size for large devices */
 @media screen and (min-width: 968px) {
   :root {
     --big-font-size: 3rem;
@@ -69,18 +52,28 @@
   }
 }
 
-/*========== Variables Dark theme ==========*/
 body.dark-theme {
-  /* HSL color mode */
   --first-color-second: hsl(var(--hue-color), 30%, 8%);
   --title-color: hsl(var(--hue-color), 8%, 95%);
-  --text-color: hsl(var(--hue-color), 8%, 45%);
-  --text-color-light: hsl(var(--hue-color), 8%, 75%);
+  --text-color: hsl(var(--hue-color), 8%, 75%);
+  --text-color-light: hsl(var(--hue-color), 8%, 85%);
   --input-color: hsl(var(--hue-color), 29%, 16%);
   --body-color: hsl(var(--hue-color), 28%, 12%);
   --container-color: hsl(var(--hue-color), 29%, 16%);
   --scroll-bar-color: hsl(var(--hue-color), 12%, 48%);
   --scroll-thumb-color: hsl(var(--hue-color), 12%, 36%);
+}
+
+/* Force better text color in dark theme for headings/subtitles */
+body.dark-theme .section__title,
+body.dark-theme .section__subtitle {
+  color: #ffffff;
+}
+
+/* Add text shadow to improve contrast in both themes */
+.section__title,
+.section__subtitle {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
 }
 
 /*========== Button Dark/Light ==========*/
