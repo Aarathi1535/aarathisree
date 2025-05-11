@@ -1335,15 +1335,7 @@ img {
 .animate-fadeInUp {
   animation: fadeInUp 1s ease-out both;
 }
-.button {
-  position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
 
-.button:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 188, 212, 0.3);
-}
 .swiper-container {
   overflow: hidden;
   padding: 2rem 0;
@@ -1375,4 +1367,11 @@ img {
 .swiper-slide {
   width: auto;
   flex-shrink: 0;
+}
+.qualification__content {
+    display: none;
+}
+
+.qualification__content.qualification__active {
+    display: block;
 }
