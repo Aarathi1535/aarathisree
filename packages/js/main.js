@@ -223,11 +223,12 @@ VANTA.NET({
   gyroControls: false,
   minHeight: 200.00,
   minWidth: 200.00,
-  scale: 1.0,
-  scaleMobile: 1.0,
+  scale: 1.00,
+  scaleMobile: 1.00,
   color: 0x00ffff,
-  backgroundColor: 0x0d0d0d,
+  backgroundColor: 0x0d0d0d
 });
+
 document.addEventListener("mousemove", function(e) {
   const trail = document.createElement("div");
   trail.className = "cursor-trail";
