@@ -557,6 +557,9 @@ img {
   width: 90%;
 }
 
+.skills__open .skills__arrow {
+  transform: rotate(-180deg);
+}
 .skills__close .skills__list {
   height: 0;
   overflow: hidden;
@@ -564,11 +567,7 @@ img {
 
 .skills__open .skills__list {
   height: max-content;
-  margin-bottom: var(--mb-2-5);
-}
-
-.skills__open .skills__arrow {
-  transform: rotate(-180deg);
+  margin-bottom: 2rem;
 }
 
 /*==================== QUALIFICATION ====================*/
@@ -744,6 +743,14 @@ img {
 }
 
 /*==================== PORTFOLIO ====================*/
+.portfolio__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  text-align: center;
+}
+
 .portfolio__container {
   overflow: initial;
 }
