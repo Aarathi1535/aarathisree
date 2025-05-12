@@ -1369,9 +1369,10 @@ img {
   flex-shrink: 0;
 }
 .qualification__content {
-    display: none;
+  display: none;
 }
 
 .qualification__content.qualification__active {
-    display: block;
+  display: block;
 }
+
