@@ -49,24 +49,32 @@ skillsHeader.forEach((el) => {
 });
 
 /*==================== QUALIFICATION TABS ====================*/
-const tabs = document.querySelectorAll("[data-target]"),
-      tabContents = document.querySelectorAll("[data-content]");
+const tabs = document.querySelectorAll("[data-target]");
+const tabContents = document.querySelectorAll("[data-content]");
 
 tabs.forEach((tab) => {
-    tab.addEventListener("click", () => {
-        const target = document.querySelector(tab.dataset.target);
+  tab.addEventListener("click", () => {
+    const targetSelector = tab.getAttribute("data-target");
+    const target = document.querySelector(targetSelector);
 
-        tabContents.forEach((tabContent) => {
-            tabContent.classList.remove("qualification__active");
-        });
-        target.classList.add("qualification__active");
+    if (!target) return; // Prevent errors if the selector is invalid
 
-        tabs.forEach((tab) => {
-            tab.classList.remove("qualification__active");
-        });
-        tab.classList.add("qualification__active");
+    // Hide all tab contents
+    tabContents.forEach((content) => {
+      content.classList.remove("qualification__active");
     });
+
+    // Remove active class from all tabs
+    tabs.forEach((t) => {
+      t.classList.remove("qualification__active");
+    });
+
+    // Show the selected tab content and mark tab as active
+    target.classList.add("qualification__active");
+    tab.classList.add("qualification__active");
+  });
 });
+
 /*==================== SERVICES MODAL ====================*/
 const modalViews = document.querySelectorAll(".services__modal"),
       modalBtns = document.querySelectorAll(".services__button"),
