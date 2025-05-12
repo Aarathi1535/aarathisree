@@ -216,47 +216,21 @@ themeButton.addEventListener("click", () => {
   localStorage.setItem("selected-icon", getCurrentIcon());
 });
 /*==================== VANTA BACKGROUND ====================*/
-let vantaEffect = null;
+document.addEventListener("DOMContentLoaded", function () {
+    VANTA.NET({
+      el: "#vanta-bg", // Target element ID
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.0,
+      scaleMobile: 1.0,
+      color: 0x00bcd4,
+      backgroundColor: 0xf8f9fa,
+    });
+  });
 
-function setVantaBackground(theme) {
-  if (vantaEffect) vantaEffect.destroy();
-
-  const options = {
-    el: "#vanta-bg",
-    mouseControls: true,
-    touchControls: true,
-    gyroControls: false,
-    minHeight: 200.0,
-    minWidth: 200.0,
-    scale: 1.0,
-    scaleMobile: 1.0,
-  };
-
-  if (theme === "dark") {
-    options.color = 0x00ffff;
-    options.backgroundColor = 0x0d0d0d;
-  } else {
-    options.color = 0x0077ff;
-    options.backgroundColor = 0xf0f0f0;
-  }
-
-  vantaEffect = VANTA.NET(options);
-}
-
-// Apply on initial load
-setVantaBackground(getCurrentTheme());
-
-// Toggle theme and Vanta
-themeButton.addEventListener("click", () => {
-  document.body.classList.toggle(darkTheme);
-  themeButton.classList.toggle(iconTheme);
-
-  const newTheme = getCurrentTheme();
-  localStorage.setItem("selected-theme", newTheme);
-  localStorage.setItem("selected-icon", getCurrentIcon());
-
-  setVantaBackground(newTheme); // Update Vanta background
-});
 
 document.addEventListener("mousemove", function(e) {
   const trail = document.createElement("div");
