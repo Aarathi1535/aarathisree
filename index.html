@@ -995,65 +995,7 @@
     <script src="./packages/js/swiper-bundle.min.js"></script>
 
     <!--==================== MAIN JS ====================-->
-    <script>
-  let isDark = document.body.classList.contains("dark-theme");
-
-  let vantaEffect = VANTA.NET({
-    el: "#vanta-bg",
-    mouseControls: true,
-    touchControls: true,
-    minHeight: 200.00,
-    minWidth: 200.00,
-    scale: 1.0,
-    scaleMobile: 1.0,
-    color: isDark ? 0xffffff : 0x00bcd4,
-    backgroundColor: isDark ? 0x0d1117 : 0xf8f9fa // adapt to your dark/light body color
-  });
-
-  // Re-initialize when theme changes
-  document.querySelector(".change-theme").addEventListener("click", () => {
-    vantaEffect.destroy();
-    isDark = !isDark;
-
-    vantaEffect = VANTA.NET({
-      el: "#vanta-bg",
-      mouseControls: true,
-      touchControls: true,
-      minHeight: 200.00,
-      minWidth: 200.00,
-      scale: 1.0,
-      scaleMobile: 1.0,
-      color: isDark ? 0xffffff : 0x00bcd4,
-      backgroundColor: isDark ? 0x0d1117 : 0xf8f9fa
-    });
-  });
-</script>
-
-<script>
-  new Swiper(".testimonial__container", {
-    loop: true,
-    grabCursor: true,
-    spaceBetween: 30,
-    slidesPerView: 1,
-    pagination: {
-      el: ".swiper-pagination-testimonial",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    breakpoints: {
-      768: {
-        slidesPerView: 2,
-      },
-      1024: {
-        slidesPerView: 3,
-      },
-    },
-  });
-</script>
-
+    <script src="./packages/js/main.js"></script>
 </body>
 
 </html>
