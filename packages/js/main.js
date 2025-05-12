@@ -54,68 +54,61 @@ const tabContents = document.querySelectorAll("[data-content]");
 
 tabs.forEach((tab) => {
   tab.addEventListener("click", () => {
-    const targetSelector = tab.getAttribute("data-target");
-    const target = document.querySelector(targetSelector);
+    const target = document.querySelector(tab.dataset.target);
+    if (!target) return;
 
-    if (!target) return; // Prevent errors if the selector is invalid
-
-    // Hide all tab contents
     tabContents.forEach((content) => {
       content.classList.remove("qualification__active");
     });
 
-    // Remove active class from all tabs
     tabs.forEach((t) => {
       t.classList.remove("qualification__active");
     });
 
-    // Show the selected tab content and mark tab as active
     target.classList.add("qualification__active");
     tab.classList.add("qualification__active");
   });
 });
 
+
 /*==================== SERVICES MODAL ====================*/
-const modalViews = document.querySelectorAll(".services__modal"),
-      modalBtns = document.querySelectorAll(".services__button"),
-      modalCloses = document.querySelectorAll(".services__modal-close");
+const modalViews = document.querySelectorAll(".services__modal");
+const modalBtns = document.querySelectorAll(".services__button"); // this must match your "View more" button class
+const modalCloses = document.querySelectorAll(".services__modal-close");
 
 let modal = function (modalClick) {
-    modalViews[modalClick].classList.add("active-modal");
+  modalViews[modalClick].classList.add("active-modal");
 };
 
 modalBtns.forEach((modalBtn, i) => {
-    modalBtn.addEventListener("click", () => {
-        modal(i);
-    });
+  modalBtn.addEventListener("click", () => {
+    modal(i);
+  });
 });
 
 modalCloses.forEach((modalClose) => {
-    modalClose.addEventListener("click", () => {
-        modalViews.forEach((modalView) => {
-            modalView.classList.remove("active-modal");
-        });
+  modalClose.addEventListener("click", () => {
+    modalViews.forEach((modalView) => {
+      modalView.classList.remove("active-modal");
     });
+  });
 });
+
 
 /*==================== PORTFOLIO SWIPER  ====================*/
 let swiperPortfolio = new Swiper(".portfolio__container", {
   cssMode: true,
   loop: true,
-
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
-
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
   },
-
-  /* mousewheel: true,
-  keyboard: true, */
 });
+
 
 /*==================== TESTIMONIAL ====================*/
 let swiperTestimonial = new Swiper(".testimonial__container", {
