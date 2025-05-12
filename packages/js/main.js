@@ -216,18 +216,20 @@ themeButton.addEventListener("click", () => {
   localStorage.setItem("selected-icon", getCurrentIcon());
 });
 /*==================== VANTA BACKGROUND ====================*/
-VANTA.NET({
-  el: "#vanta-bg",
-  mouseControls: true,
-  touchControls: true,
-  gyroControls: false,
-  minHeight: 200.00,
-  minWidth: 200.00,
-  scale: 1.00,
-  scaleMobile: 1.00,
-  color: 0x00ffff,
-  backgroundColor: 0x0d0d0d
-});
+document.addEventListener("DOMContentLoaded", function () {
+    VANTA.NET({
+      el: "#vanta-bg", // Target element ID
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.0,
+      scaleMobile: 1.0,
+      color: 0x00bcd4,
+      backgroundColor: 0xf8f9fa,
+    });
+  });
 
 document.addEventListener("mousemove", function(e) {
   const trail = document.createElement("div");
