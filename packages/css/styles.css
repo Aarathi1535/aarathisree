@@ -1383,3 +1383,32 @@ img {
   display: block;
 }
 
+/* 3D Floating Card Style */
+.floating-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  box-shadow: 0 20px 30px rgba(0, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  transition: transform 0.4s ease;
+  will-change: transform;
+}
+
+.floating-card:hover {
+  transform: rotateY(6deg) rotateX(6deg) scale(1.03);
+}
+.cursor-trail {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: cyan;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.5;
+  animation: trailFade 0.3s linear;
+}
+
+@keyframes trailFade {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(2); opacity: 0; }
+}
