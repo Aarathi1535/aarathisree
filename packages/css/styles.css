@@ -1442,5 +1442,5 @@ img {
 }
 
 body.dark-theme #vanta-overlay {
-  background-color: rgba(0, 0, 0, 0.9); /* Stronger dim for dark theme */
+  background-color: rgba(0, 0, 0, 1.5); /* Stronger dim for dark theme */
 }
