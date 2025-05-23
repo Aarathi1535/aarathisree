@@ -183,6 +183,8 @@ img {
   height: var(--header-height);
   display: flex;
   justify-content: space-between;
+  background-color: var(--first-color-second);
+
   align-items: center;
 }
 
@@ -202,7 +204,7 @@ img {
 }
 
 .nav__toggle:hover {
-  color: var(--first-color);
+  color: #ffffff;
 }
 
 @media screen and (max-width: 767px) {
