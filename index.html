@@ -1002,7 +1002,7 @@
      <!-- Three.js and Vanta.js -->
 
     </div>
-        <!-- Load Three.js and Vanta.js Waves -->
+<!-- Load Three.js and Vanta.js Waves -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.waves.min.js"></script>
 
@@ -1033,16 +1033,15 @@
 
   document.addEventListener("DOMContentLoaded", initVanta);
 
-  // When theme changes
+  // Re-initialize when theme is toggled
   const themeToggle = document.getElementById("theme-button");
   if (themeToggle) {
     themeToggle.addEventListener("click", () => {
-      setTimeout(initVanta, 300); // Wait for theme class to apply
+      setTimeout(initVanta, 300); // Slight delay for class to be applied
     });
   }
 </script>
 
-    
 </body>
 
 </html>
