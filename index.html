@@ -1003,6 +1003,7 @@
 
     </div>
 <!-- Load Three.js and Vanta.js Waves -->
+<!-- Vanta and Three.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.waves.min.js"></script>
 
@@ -1011,9 +1012,11 @@
 
   function initVanta() {
     const isDark = document.body.classList.contains('dark-theme');
-    
+
+    // Destroy the previous effect if it exists
     if (vantaEffect) vantaEffect.destroy();
 
+    // Apply the new effect
     vantaEffect = VANTA.WAVES({
       el: "#vanta-bg",
       mouseControls: true,
@@ -1023,7 +1026,7 @@
       minWidth: 200.00,
       scale: 1.00,
       scaleMobile: 1.00,
-      color: isDark ? 0x00ffff : 0x0077ff, // Cyan for dark, blue for light
+      color: isDark ? 0x008080 : 0x7FFFD4, // Teal for dark, aquamarine for light
       shininess: 50.00,
       waveHeight: 20.00,
       waveSpeed: 1.00,
@@ -1033,14 +1036,14 @@
 
   document.addEventListener("DOMContentLoaded", initVanta);
 
-  // Re-initialize when theme is toggled
   const themeToggle = document.getElementById("theme-button");
   if (themeToggle) {
     themeToggle.addEventListener("click", () => {
-      setTimeout(initVanta, 300); // Slight delay for class to be applied
+      setTimeout(initVanta, 300);
     });
   }
 </script>
+
 
 </body>
 
