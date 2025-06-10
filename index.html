@@ -997,26 +997,39 @@
     <!--==================== SWIPER JS ====================-->
     <script src="./packages/js/swiper-bundle.min.js"></script>
 
- <!--==================== MAIN JS ====================-->
+<!--==================== MAIN JS ====================-->
     <script src="./packages/js/main.js"></script>
 
     <!--==================== THREE.JS PARTICLE BACKGROUND ====================-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
     <div id="particles-bg"></div>
     <script>
-      // Three.js Floating Particles Background
-      const PARTICLE_COUNT = 180;
-      const PARTICLE_SIZE = 1.5;
-      const PARTICLE_AREA = 100;
+      // Spread the particles more
+      const PARTICLE_COUNT = 220;
+      const PARTICLE_SIZE = 1.7;
+      const PARTICLE_AREA = 350; // much larger area for more spread
 
       let scene, camera, renderer, points, geometry, material, velocities = [], mouse = {x:0, y:0};
-      function initParticlesBG() {
+      let currentTheme = document.body.classList.contains('dark-theme') ? 'dark' : 'light';
+
+      function getParticleMaterial(theme) {
+        return new THREE.PointsMaterial({
+          color: theme === 'dark' ? 0x00fff7 : 0x005479, // cyan for dark, blue for light
+          size: PARTICLE_SIZE,
+          transparent: true,
+          opacity: theme === 'dark' ? 0.88 : 0.62,
+          depthWrite: false,
+          blending: THREE.AdditiveBlending,
+        });
+      }
+
+      function initParticlesBG(theme) {
         const width = window.innerWidth;
         const height = window.innerHeight;
 
         scene = new THREE.Scene();
         camera = new THREE.PerspectiveCamera(75, width / height, 1, 1000);
-        camera.position.z = 150;
+        camera.position.z = 230;
 
         renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
         renderer.setClearColor(0x000000, 0);
@@ -1029,25 +1042,23 @@
 
         velocities = [];
         for (let i = 0; i < PARTICLE_COUNT; i++) {
-          const x = (Math.random() - 0.5) * PARTICLE_AREA;
-          const y = (Math.random() - 0.5) * PARTICLE_AREA;
-          const z = (Math.random() - 0.5) * PARTICLE_AREA;
+          // More spread: use a sphere or large cube
+          const r = Math.cbrt(Math.random()) * (PARTICLE_AREA/2);
+          const theta = Math.random() * Math.PI * 2;
+          const phi = Math.acos(2 * Math.random() - 1);
+          const x = r * Math.sin(phi) * Math.cos(theta);
+          const y = r * Math.sin(phi) * Math.sin(theta);
+          const z = r * Math.cos(phi);
           positions.push(x, y, z);
+
           velocities.push(
-            (Math.random() - 0.5) * 0.1,
-            (Math.random() - 0.5) * 0.1,
-            (Math.random() - 0.5) * 0.1
+            (Math.random() - 0.5) * 0.22,
+            (Math.random() - 0.5) * 0.22,
+            (Math.random() - 0.5) * 0.22
           );
         }
         geometry.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
-        material = new THREE.PointsMaterial({
-          color: 0xffffff,
-          size: PARTICLE_SIZE,
-          transparent: true,
-          opacity: 0.7,
-          depthWrite: false,
-          blending: THREE.AdditiveBlending,
-        });
+        material = getParticleMaterial(theme);
         points = new THREE.Points(geometry, material);
         scene.add(points);
 
@@ -1075,7 +1086,7 @@
           pos.array[idx]   += velocities[idx]   * 0.7;
           pos.array[idx+1] += velocities[idx+1] * 0.7;
           pos.array[idx+2] += velocities[idx+2] * 0.7;
-          // Boundaries
+          // Boundaries (keep in a large box)
           for (let j = 0; j < 3; j++) {
             if (pos.array[idx+j] > PARTICLE_AREA/2 || pos.array[idx+j] < -PARTICLE_AREA/2) {
               velocities[idx+j] = -velocities[idx+j];
@@ -1083,17 +1094,52 @@
           }
         }
         pos.needsUpdate = true;
-        camera.position.x += (mouse.x * 20 - camera.position.x) * 0.03;
-        camera.position.y += (mouse.y * 20 - camera.position.y) * 0.03;
+        camera.position.x += (mouse.x * 40 - camera.position.x) * 0.03;
+        camera.position.y += (mouse.y * 40 - camera.position.y) * 0.03;
         camera.lookAt(scene.position);
 
         renderer.render(scene, camera);
         requestAnimationFrame(animate);
       }
 
+      // Remove previous particles renderer and scene
+      function clearParticlesBG() {
+        if (renderer) {
+          renderer.dispose();
+          if (renderer.domElement && renderer.domElement.parentNode) {
+            renderer.domElement.parentNode.removeChild(renderer.domElement);
+          }
+        }
+        if (geometry) geometry.dispose();
+        if (material) material.dispose();
+        scene = camera = renderer = points = geometry = material = null;
+      }
+
+      // Theme change listener
+      function updateParticlesTheme(theme) {
+        if (material) {
+          // Dispose of old material
+          material.dispose();
+          // Replace with new material
+          material = getParticleMaterial(theme);
+          points.material = material;
+        }
+      }
+
       document.addEventListener("DOMContentLoaded", function() {
-        initParticlesBG();
+        initParticlesBG(currentTheme);
       });
+
+      // Theme toggle integration
+      const themeToggle = document.getElementById("theme-button");
+      if (themeToggle) {
+        themeToggle.addEventListener("click", () => {
+          setTimeout(() => {
+            currentTheme = document.body.classList.contains('dark-theme') ? 'dark' : 'light';
+            updateParticlesTheme(currentTheme);
+          }, 350);
+        });
+      }
     </script>
 
 
