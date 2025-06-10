@@ -1447,3 +1447,12 @@ img {
 body.dark-theme #vanta-overlay {
   background-color: rgba(0, 0, 0, 1.5); /* Stronger dim for dark theme */
 }
+#particles-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -2;
+  pointer-events: none;
+}
