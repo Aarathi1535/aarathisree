@@ -1,4 +1,4 @@
-# Data Scientist
+# Data Sciene Enthusiast
 
 ### Technical Skills
 **Programming Languages & Principles:** Python, Java, C, SQL, DSA, OOPs  
