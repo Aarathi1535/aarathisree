@@ -597,10 +597,25 @@
 
     <div class="portfolio__container container swiper-container">
         <div class="swiper-wrapper">
+            <div class="portfolio__content grid swiper-slide">
+                <img src="./packages/images/trustrank.png" alt="" class="portfolio__img">
+                <div class="portfolio_">
+                    <h3 class="portfolio__title">TrustRank-Algorithm</h3>
+                    <p class="portfolio__description">
+                       Created a trust-aware review ranking algorithm leveraging NLP, helpfulness, and time decay, outperforming traditional methods with a 0.93 Spearman correlation to ground truth rankings.
+                    </p>
+                    <a href="https://trustrank-algorithm.streamlit.app/" class="button button--flex button--small portfolio__button">
+                        Demo
+                        <i class="uil uil-arrow-right button__icon"></i>
+                    </a>
+                </div>
+            </div>
+
+
              <div class="portfolio__content grid swiper-slide">
                 <img src="./packages/images/digital_forensics.png" alt="" class="portfolio__img">
                 <div class="portfolio_">
-                    <h3 class="portfolio__title">Digital Forensics</h3>
+                    <h3 class="portfolio__title">ForgeryNet</h3>
                     <p class="portfolio__description">
                          A smart, Django-powered web application that detects forged or tampered documents using a ResNet-based deep learning model.
                         It combines image processing, optical character recognition (OCR), and convolutional neural networks (CNNs) to analyze scanned documents for visual and textual inconsistencies.
@@ -759,6 +774,22 @@
         
             <div class="testimonial__container container swiper-container">
                 <div class="swiper-wrapper">
+                    <!--==================== ACHIEVEMENT 0 ====================-->
+                     <div class="testimonial__content swiper-slide">
+                        <div class="testimonial__data">
+                            <div class="testimonial__header">
+                                <img src="./packages/images/scholar.jpeg" alt="" class="testimonial__img">
+                                <div>
+                                    <h3 class="testimonial__name">Research Paper Publication</h3>
+                                    <span class="testimonial__client">IEEE PuneCon 2024</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="testimonial__description">
+                            Authored and published ”Revolutionizing the Future of Automated Subjective Answer Sheet Evaluation System with Machine Learning and LLMs” at IEEE PuneCon 2024 International Conference.
+                    </div>
+
+                    
                     <!--==================== ACHIEVEMENT 1 ====================-->
                     <div class="testimonial__content swiper-slide">
                         <div class="testimonial__data">
@@ -965,9 +996,6 @@
                 <ul class="footer__links">
                     <li>
                         <a href="#services" class="footer__link">Services</a>
-                    </li>
-                    <li>
-                        <a href="#portfolio" class="footer__link">Portfolio</a>
                     </li>
                     <li>
                         <a href="#contact" class="footer__link">Contact</a>
