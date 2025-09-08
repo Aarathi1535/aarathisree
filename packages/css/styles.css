@@ -1456,3 +1456,35 @@ body.dark-theme #vanta-overlay {
   z-index: -2;
   pointer-events: none;
 }
+.qualification__subtimeline {
+  margin-top: 1rem;
+  margin-left: 1.5rem; /* indent inside parent block */
+  border-left: 2px solid var(--first-color); /* timeline line */
+  padding-left: 1rem;
+}
+
+.qualification__subdata {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.qualification__subrounder {
+  width: 12px;
+  height: 12px;
+  background-color: var(--first-color);
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 1rem;
+  margin-top: 5px;
+}
+
+.qualification__subline {
+  display: block;
+  width: 2px;
+  height: 100%;
+  background-color: var(--first-color);
+  margin: 0 auto;
+}
+
+
