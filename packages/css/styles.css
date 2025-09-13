@@ -5,7 +5,7 @@
 :root {
   --first-color: #819067;         /* Main accent (was hsl(var(--hue-color), 69%, 61%)) */
   --first-color-second: #e0f2bf;  /* Secondary accent */
-  --first-color-alt: #C78A3B;     /* Alt accent, for hover */
+  --first-color-alt: #2f3b1a;     /* Alt accent, for hover */
   --first-color-lighter: #F2EDD1; /* Lighter accent, for backgrounds/borders */
   --title-color: #4B352A;         /* Titles and headings */
   --text-color: #3E0703;          /* Main text color */
@@ -1484,6 +1484,7 @@ body.dark-theme #vanta-overlay {
   background-color: var(--first-color);
   margin: 0 auto;
 }
+
 
 
 
