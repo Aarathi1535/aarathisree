@@ -51,13 +51,13 @@
 }
 
 body.dark-theme {
-  --first-color-second:#819067;
+  --first-color-second:#033605;
   --title-color: #F0E4D3;
   --text-color:#d8f2d9;
   --text-color-light: #DCC5B2;
   --input-color: #bed498;
   --body-color: #033605;
-  --container-color: #DCC5B2;
+  --container-color: #bed498;
   --scroll-bar-color: #819067;
   --scroll-thumb-color: #819067;
 }
@@ -1484,6 +1484,7 @@ body.dark-theme #vanta-overlay {
   background-color: var(--first-color);
   margin: 0 auto;
 }
+
 
 
 
