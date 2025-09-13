@@ -3,7 +3,7 @@
 
 /*==================== VARIABLES CSS ====================*/
 :root {
-  --first-color: #bed498;         /* Main accent (was hsl(var(--hue-color), 69%, 61%)) */
+  --first-color: #819067;         /* Main accent (was hsl(var(--hue-color), 69%, 61%)) */
   --first-color-second: #e0f2bf;  /* Secondary accent */
   --first-color-alt: #C78A3B;     /* Alt accent, for hover */
   --first-color-lighter: #F2EDD1; /* Lighter accent, for backgrounds/borders */
@@ -1484,6 +1484,7 @@ body.dark-theme #vanta-overlay {
   background-color: var(--first-color);
   margin: 0 auto;
 }
+
 
 
 
