@@ -51,15 +51,15 @@
 }
 
 body.dark-theme {
-  --first-color-second: #DCC5B2;
+  --first-color-second:#819067;
   --title-color: #F0E4D3;
-  --text-color: #9A3F3F;
+  --text-color:#d8f2d9;
   --text-color-light: #DCC5B2;
-  --input-color: #DCC5B2;
-  --body-color: #0A400C;
+  --input-color: #bed498;
+  --body-color: #033605;
   --container-color: #DCC5B2;
-  --scroll-bar-color: #DCC5B2;
-  --scroll-thumb-color: #D9A299;
+  --scroll-bar-color: #819067;
+  --scroll-thumb-color: #819067;
 }
 
 /* Force better text color in dark theme for headings/subtitles */
@@ -1484,6 +1484,7 @@ body.dark-theme #vanta-overlay {
   background-color: var(--first-color);
   margin: 0 auto;
 }
+
 
 
 
