@@ -1484,6 +1484,10 @@ body.dark-theme #vanta-overlay {
   background-color: var(--first-color);
   margin: 0 auto;
 }
+.swiper-container,
+.swiper-wrapper {
+  background: #496e2d !important;
+}
 
 
 
