@@ -3,18 +3,18 @@
 
 /*==================== VARIABLES CSS ====================*/
 :root {
-  --first-color: #DCC5B2;         /* Main accent (was hsl(var(--hue-color), 69%, 61%)) */
-  --first-color-second: #DCC5B2;  /* Secondary accent */
+  --first-color: #bed498;         /* Main accent (was hsl(var(--hue-color), 69%, 61%)) */
+  --first-color-second: ##bed498;  /* Secondary accent */
   --first-color-alt: #C78A3B;     /* Alt accent, for hover */
   --first-color-lighter: #F2EDD1; /* Lighter accent, for backgrounds/borders */
   --title-color: #4B352A;         /* Titles and headings */
   --text-color: #3E0703;          /* Main text color */
   --text-color-light: #DCC5B2;    /* Light text */
-  --input-color: #F0E4D3;         /* Input backgrounds */
-  --body-color: #FAF7F3;          /* Page background */
-  --container-color: #F0E4D3;     /* Card/container backgrounds */
-  --scroll-bar-color: #F0E4D3;    /* Scrollbar */
-  --scroll-thumb-color: #DCC5B2;
+  --input-color: #bed498;         /* Input backgrounds */
+  --body-color: #819067;          /* Page background */
+  --container-color: #bed498;     /* Card/container backgrounds */
+  --scroll-bar-color: #bed498;    /* Scrollbar */
+  --scroll-thumb-color:#819067 ;
   --body-font: "Poppins", sans-serif;
   --big-font-size: 2rem;
   --h1-font-size: 1.5rem;
@@ -1484,6 +1484,7 @@ body.dark-theme #vanta-overlay {
   background-color: var(--first-color);
   margin: 0 auto;
 }
+
 
 
 
