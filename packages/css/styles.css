@@ -8,7 +8,7 @@
   --first-color-alt: #D9A299;     /* Alt accent, for hover */
   --first-color-lighter: #F0E4D3; /* Lighter accent, for backgrounds/borders */
   --title-color: #D9A299;         /* Titles and headings */
-  --text-color: #D9A299;          /* Main text color */
+  --text-color: #3E0703;          /* Main text color */
   --text-color-light: #DCC5B2;    /* Light text */
   --input-color: #F0E4D3;         /* Input backgrounds */
   --body-color: #FAF7F3;          /* Page background */
@@ -53,7 +53,7 @@
 body.dark-theme {
   --first-color-second: #D9A299;
   --title-color: #F0E4D3;
-  --text-color: #F0E4D3;
+  --text-color: #9A3F3F;
   --text-color-light: #DCC5B2;
   --input-color: #DCC5B2;
   --body-color: #D9A299;
@@ -1484,6 +1484,7 @@ body.dark-theme #vanta-overlay {
   background-color: var(--first-color);
   margin: 0 auto;
 }
+
 
 
 
