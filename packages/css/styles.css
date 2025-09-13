@@ -3,20 +3,18 @@
 
 /*==================== VARIABLES CSS ====================*/
 :root {
-  --header-height: 3rem;
-  --hue-color: 190;
-  --first-color: hsl(var(--hue-color), 69%, 61%);
-  --first-color-second: hsl(var(--hue-color), 69%, 61%);
-  --first-color-alt: hsl(var(--hue-color), 57%, 53%);
-  --first-color-lighter: hsl(var(--hue-color), 92%, 85%);
-  --title-color: hsl(var(--hue-color), 8%, 15%);
-  --text-color: hsl(var(--hue-color), 8%, 45%);
-  --text-color-light: hsl(var(--hue-color), 8%, 65%);
-  --input-color: hsl(var(--hue-color), 70%, 96%);
-  --body-color: hsl(var(--hue-color), 60%, 99%);
-  --container-color: #fff;
-  --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
-  --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
+  --first-color: #DCC5B2;         /* Main accent (was hsl(var(--hue-color), 69%, 61%)) */
+  --first-color-second: #DCC5B2;  /* Secondary accent */
+  --first-color-alt: #D9A299;     /* Alt accent, for hover */
+  --first-color-lighter: #F0E4D3; /* Lighter accent, for backgrounds/borders */
+  --title-color: #D9A299;         /* Titles and headings */
+  --text-color: #D9A299;          /* Main text color */
+  --text-color-light: #DCC5B2;    /* Light text */
+  --input-color: #F0E4D3;         /* Input backgrounds */
+  --body-color: #FAF7F3;          /* Page background */
+  --container-color: #F0E4D3;     /* Card/container backgrounds */
+  --scroll-bar-color: #F0E4D3;    /* Scrollbar */
+  --scroll-thumb-color: #DCC5B2;
   --body-font: "Poppins", sans-serif;
   --big-font-size: 2rem;
   --h1-font-size: 1.5rem;
@@ -1486,5 +1484,6 @@ body.dark-theme #vanta-overlay {
   background-color: var(--first-color);
   margin: 0 auto;
 }
+
 
 
