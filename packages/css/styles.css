@@ -11,7 +11,7 @@
   --text-color: #3E0703;          /* Main text color */
   --text-color-light: #DCC5B2;    /* Light text */
   --input-color: #bed498;         /* Input backgrounds */
-  --body-color: #819067;          /* Page background */
+  --body-color: #e0f2bf;          /* Page background */
   --container-color: #bed498;     /* Card/container backgrounds */
   --scroll-bar-color: #bed498;    /* Scrollbar */
   --scroll-thumb-color:#819067 ;
@@ -1484,6 +1484,7 @@ body.dark-theme #vanta-overlay {
   background-color: var(--first-color);
   margin: 0 auto;
 }
+
 
 
 
