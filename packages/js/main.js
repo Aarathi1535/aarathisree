@@ -1,153 +1,434 @@
-const navMenu = document.getElementById("nav-menu");
-const navToggle = document.getElementById("nav-toggle");
-const navClose = document.getElementById("nav-close");
-const navLinks = document.querySelectorAll(".nav__link");
-const themeButton = document.getElementById("theme-button");
-const darkThemeClass = "dark-theme";
-const iconThemeClass = "uil-sun";
+/**
+ * NEURAL HORIZON - AARATHISREE BALLA PORTFOLIO ENGINE
+ * Three.js Neural Mesh, Interactive CLI Terminal, Project Filtering, & Micro-Interactions
+ */
 
-if (navToggle) {
-  navToggle.addEventListener("click", () => navMenu.classList.add("show-menu"));
-}
-if (navClose) {
-  navClose.addEventListener("click", () => navMenu.classList.remove("show-menu"));
-}
-navLinks.forEach((link) =>
-  link.addEventListener("click", () => navMenu.classList.remove("show-menu"))
-);
+document.addEventListener('DOMContentLoaded', () => {
+  initThemeManager();
+  initNeuralCanvas();
+  initInteractiveTerminal();
+  initTimelineTabs();
+  initProjectFilters();
+  initScrollEffects();
+  initCardTilts();
+  initClipboardHelpers();
+});
 
-const skillsContent = document.querySelectorAll(".skills__content");
-const skillsHeaders = document.querySelectorAll(".skills__header");
-skillsHeaders.forEach((header) => {
-  header.addEventListener("click", function () {
-    const current = this.parentNode;
-    skillsContent.forEach((item) => item.classList.replace("skills__open", "skills__close"));
-    if (current.classList.contains("skills__close")) {
-      current.classList.replace("skills__close", "skills__open");
-    }
+/* ==========================================================================
+   1. THEME MANAGER
+   ========================================================================== */
+function initThemeManager() {
+  const themeToggleBtn = document.getElementById('theme-toggle-btn');
+  const themeIcon = document.getElementById('theme-icon');
+  const savedTheme = localStorage.getItem('nh-theme') || 'dark';
+
+  if (savedTheme === 'light') {
+    document.body.classList.add('light-theme');
+    if (themeIcon) themeIcon.className = 'uil uil-moon';
+  } else {
+    document.body.classList.remove('light-theme');
+    if (themeIcon) themeIcon.className = 'uil uil-sun';
+  }
+
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', () => {
+      const isLight = document.body.classList.toggle('light-theme');
+      localStorage.setItem('nh-theme', isLight ? 'light' : 'dark');
+      if (themeIcon) {
+        themeIcon.className = isLight ? 'uil uil-moon' : 'uil uil-sun';
+      }
+      if (window.updateNeuralColors) {
+        window.updateNeuralColors(isLight);
+      }
+    });
+  }
+
+  // Mobile menu toggle
+  const mobileToggle = document.getElementById('mobile-toggle');
+  const navMenu = document.getElementById('nav-menu');
+  if (mobileToggle && navMenu) {
+    mobileToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+      mobileToggle.innerHTML = navMenu.classList.contains('open') 
+        ? '<i class="uil uil-times"></i>' 
+        : '<i class="uil uil-apps"></i>';
+    });
+
+    document.querySelectorAll('.nav__link').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+        mobileToggle.innerHTML = '<i class="uil uil-apps"></i>';
+      });
+    });
+  }
+}
+
+/* ==========================================================================
+   2. THREE.JS NEURAL CONSTELLATION CANVAS
+   ========================================================================== */
+function initNeuralCanvas() {
+  const container = document.getElementById('neural-canvas');
+  if (!container || typeof THREE === 'undefined') return;
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 1000);
+  camera.position.z = 250;
+
+  const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  container.appendChild(renderer.domElement);
+
+  const isLight = document.body.classList.contains('light-theme');
+  let nodeColor = isLight ? 0x0284c7 : 0x00f2fe;
+  let lineColor = isLight ? 0x6366f1 : 0x4facfe;
+
+  const particleCount = window.innerWidth < 768 ? 55 : 95;
+  const maxDistance = window.innerWidth < 768 ? 85 : 115;
+  const particles = [];
+
+  const geometry = new THREE.BufferGeometry();
+  const positions = new Float32Array(particleCount * 3);
+  const velocities = [];
+
+  for (let i = 0; i < particleCount; i++) {
+    const x = (Math.random() - 0.5) * 450;
+    const y = (Math.random() - 0.5) * 350;
+    const z = (Math.random() - 0.5) * 200;
+
+    positions[i * 3] = x;
+    positions[i * 3 + 1] = y;
+    positions[i * 3 + 2] = z;
+
+    velocities.push({
+      x: (Math.random() - 0.5) * 0.35,
+      y: (Math.random() - 0.5) * 0.35,
+      z: (Math.random() - 0.5) * 0.2
+    });
+
+    particles.push(new THREE.Vector3(x, y, z));
+  }
+
+  geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+
+  const pMaterial = new THREE.PointsMaterial({
+    color: nodeColor,
+    size: 3.2,
+    transparent: true,
+    opacity: isLight ? 0.6 : 0.85,
+    blending: THREE.AdditiveBlending
   });
-});
 
-const tabs = document.querySelectorAll("[data-target]");
-const tabContents = document.querySelectorAll("[data-content]");
-tabs.forEach((tab) => {
-  tab.addEventListener("click", () => {
-    const target = document.querySelector(tab.dataset.target);
-    if (!target) return;
-    tabContents.forEach((content) => content.classList.remove("qualification__active"));
-    tabs.forEach((t) => t.classList.remove("qualification__active"));
-    target.classList.add("qualification__active");
-    tab.classList.add("qualification__active");
+  const pointCloud = new THREE.Points(geometry, pMaterial);
+  scene.add(pointCloud);
+
+  // Line Mesh for connections
+  const lineMaterial = new THREE.LineBasicMaterial({
+    color: lineColor,
+    transparent: true,
+    opacity: isLight ? 0.15 : 0.28,
+    blending: THREE.AdditiveBlending
   });
-});
 
-const modalViews = document.querySelectorAll(".services__modal");
-const modalButtons = document.querySelectorAll(".services__button");
-const modalCloses = document.querySelectorAll(".services__modal-close");
-modalButtons.forEach((button, index) => {
-  button.addEventListener("click", () => modalViews[index].classList.add("active-modal"));
-});
-modalCloses.forEach((button) => {
-  button.addEventListener("click", () =>
-    modalViews.forEach((modal) => modal.classList.remove("active-modal"))
-  );
-});
+  const linesGeometry = new THREE.BufferGeometry();
+  const lineMesh = new THREE.LineSegments(linesGeometry, lineMaterial);
+  scene.add(lineMesh);
 
-new Swiper(".portfolio__container", {
-  loop: true,
-  grabCursor: true,
-  spaceBetween: 28,
-  centeredSlides: true,
-  slidesPerView: 1,
-  speed: 850,
-  autoplay: {
-    delay: 3300,
-    disableOnInteraction: false,
-  },
-  pagination: {
-    el: ".portfolio .swiper-pagination",
-    clickable: true,
-  },
-  navigation: {
-    nextEl: ".portfolio .swiper-button-next",
-    prevEl: ".portfolio .swiper-button-prev",
-  },
-});
-
-function initAchievementTicker() {
-  const track = document.getElementById("achievement-track");
-  if (!track) return;
-  track.innerHTML += track.innerHTML;
-}
-initAchievementTicker();
-
-const sections = document.querySelectorAll("section[id]");
-function scrollActive() {
-  const scrollY = window.pageYOffset;
-  sections.forEach((current) => {
-    const sectionHeight = current.offsetHeight;
-    const sectionTop = current.offsetTop - 130;
-    const sectionId = current.getAttribute("id");
-    const activeLink = document.querySelector('.nav__menu a[href*="' + sectionId + '"]');
-    if (!activeLink) return;
-    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-      activeLink.classList.add("active-link");
-    } else {
-      activeLink.classList.remove("active-link");
-    }
+  // Mouse interactivity
+  let mouse = { x: 0, y: 0, targetX: 0, targetY: 0 };
+  window.addEventListener('mousemove', (e) => {
+    mouse.targetX = (e.clientX / window.innerWidth) * 2 - 1;
+    mouse.targetY = -(e.clientY / window.innerHeight) * 2 + 1;
   });
-}
-window.addEventListener("scroll", scrollActive);
 
-window.addEventListener("scroll", () => {
-  const header = document.getElementById("header");
-  const scrollUp = document.getElementById("scroll-up");
-  if (window.scrollY >= 80) header.classList.add("scroll-header");
-  else header.classList.remove("scroll-header");
-  if (window.scrollY >= 560) scrollUp.classList.add("show-scroll");
-  else scrollUp.classList.remove("show-scroll");
-});
+  window.addEventListener('resize', () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+  });
 
-const savedTheme = localStorage.getItem("selected-theme");
-if (savedTheme) {
-  document.body.classList.toggle(darkThemeClass, savedTheme === "dark");
-}
-if (themeButton) {
-  themeButton.classList.toggle(iconThemeClass, document.body.classList.contains(darkThemeClass));
-  const toggleTheme = () => {
-    document.body.classList.toggle(darkThemeClass);
-    themeButton.classList.toggle(iconThemeClass);
-    localStorage.setItem(
-      "selected-theme",
-      document.body.classList.contains(darkThemeClass) ? "dark" : "light"
-    );
+  window.updateNeuralColors = (isLightMode) => {
+    pMaterial.color.setHex(isLightMode ? 0x0284c7 : 0x00f2fe);
+    lineMaterial.color.setHex(isLightMode ? 0x6366f1 : 0x4facfe);
+    pMaterial.opacity = isLightMode ? 0.6 : 0.85;
+    lineMaterial.opacity = isLightMode ? 0.15 : 0.28;
   };
-  themeButton.addEventListener("click", toggleTheme);
-  themeButton.addEventListener("keydown", (event) => {
-    if (event.key === "Enter" || event.key === " ") {
-      event.preventDefault();
-      toggleTheme();
+
+  function animate() {
+    requestAnimationFrame(animate);
+
+    mouse.x += (mouse.targetX - mouse.x) * 0.05;
+    mouse.y += (mouse.targetY - mouse.y) * 0.05;
+
+    const posArray = geometry.attributes.position.array;
+    const linePositions = [];
+
+    for (let i = 0; i < particleCount; i++) {
+      let idx = i * 3;
+      posArray[idx] += velocities[i].x;
+      posArray[idx + 1] += velocities[i].y;
+      posArray[idx + 2] += velocities[i].z;
+
+      // Bounce boundaries
+      if (posArray[idx] > 240 || posArray[idx] < -240) velocities[i].x = -velocities[i].x;
+      if (posArray[idx + 1] > 190 || posArray[idx + 1] < -190) velocities[i].y = -velocities[i].y;
+      if (posArray[idx + 2] > 110 || posArray[idx + 2] < -110) velocities[i].z = -velocities[i].z;
+
+      particles[i].set(posArray[idx], posArray[idx + 1], posArray[idx + 2]);
+
+      // Connect nearby nodes
+      for (let j = i + 1; j < particleCount; j++) {
+        const dist = particles[i].distanceTo(particles[j]);
+        if (dist < maxDistance) {
+          linePositions.push(
+            particles[i].x, particles[i].y, particles[i].z,
+            particles[j].x, particles[j].y, particles[j].z
+          );
+        }
+      }
     }
+
+    geometry.attributes.position.needsUpdate = true;
+    linesGeometry.setAttribute('position', new THREE.Float32BufferAttribute(linePositions, 3));
+
+    camera.position.x += (mouse.x * 25 - camera.position.x) * 0.03;
+    camera.position.y += (mouse.y * 25 - camera.position.y) * 0.03;
+    camera.lookAt(scene.position);
+
+    renderer.render(scene, camera);
+  }
+
+  animate();
+}
+
+/* ==========================================================================
+   3. INTERACTIVE HERO CLI TERMINAL
+   ========================================================================== */
+function initInteractiveTerminal() {
+  const tabs = document.querySelectorAll('.terminal__tab');
+  const panes = document.querySelectorAll('.terminal__pane');
+  const cmdInput = document.getElementById('terminal-cli-input');
+  const terminalHistory = document.getElementById('terminal-history');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = tab.dataset.target;
+      tabs.forEach(t => t.classList.remove('active'));
+      panes.forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      const pane = document.getElementById(target);
+      if (pane) pane.classList.add('active');
+    });
+  });
+
+  if (cmdInput && terminalHistory) {
+    const commands = {
+      'help': 'Available commands: <span class="t-keyword">skills</span>, <span class="t-keyword">research</span>, <span class="t-keyword">ventures</span>, <span class="t-keyword">projects</span>, <span class="t-keyword">publications</span>, <span class="t-keyword">experience</span>, <span class="t-keyword">contact</span>, <span class="t-keyword">clear</span>, <span class="t-keyword">hire</span>',
+      'skills': '<span class="t-str">["Python", "Machine Learning", "LLMs", "Computer Vision", "SQL", "MongoDB", "Flask/Django", "QUIC/HTTP-3", "SHAP/LIME"]</span>',
+      'research': '<span class="t-var">Current Fellowship:</span> Exam Evaluation Platform @ CVIT, IIIT Hyderabad (Prof. C. V. Jawahar) — role-based digital exam evaluation with interactive grading canvas, audit trails & immutable storage.<br><span class="t-var">Published:</span> QUIC DDoS Flood Detection in HTTP/3 with XAI (95.8% Acc)',
+      'ventures': '<span class="t-keyword">Aarshiv:</span> Independent tech venture. Live site: <a href="https://aarshivai.netlify.app/" target="_blank" class="t-prompt">https://aarshivai.netlify.app/</a> (1000+ Users, 98% MBBS AI Evaluator, 100+ Leads in 5 Mins)',
+      'projects': '<span class="t-keyword">1. QUIC DDoS Flood Detector:</span> Random Forest + XAI (95.8% Acc)<br><span class="t-keyword">2. EduEvaluator:</span> LLM Subjective Grader (IEEE PuneCon)<br><span class="t-keyword">3. TrustRank Algorithm:</span> NLP Review Ranking (0.93 Spearman)',
+      'publications': '<span class="t-keyword">1. IJSRET 2026:</span> QUIC Traffic Flood Attack Detection in HTTP/3 Networks<br><span class="t-keyword">2. IEEE PuneCon 2024:</span> Automated Subjective Answer Sheet Evaluation using LLMs & ML',
+      'experience': '<span class="t-str">Research Fellow @ CVIT IIIT-H | Founder @ Aarshiv (aarshivai.netlify.app) | Data Analyst @ Unstop | Tech Lead @ SnapGro</span>',
+      'hire': '<span class="t-keyword">Status:</span> Open for AI & Backend Engineer roles. Email: <a href="mailto:aarathisree.1535@gmail.com" class="t-prompt">aarathisree.1535@gmail.com</a>',
+      'contact': '<span class="t-var">Email:</span> aarathisree.1535@gmail.com | <span class="t-var">Phone:</span> +91-9381481266 | <span class="t-var">LinkedIn:</span> /in/aarathisree-balla-349b66284'
+    };
+
+    cmdInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        const rawCmd = cmdInput.value.trim().toLowerCase();
+        cmdInput.value = '';
+
+        if (!rawCmd) return;
+
+        if (rawCmd === 'clear') {
+          terminalHistory.innerHTML = '';
+          return;
+        }
+
+        const cmdLine = document.createElement('div');
+        cmdLine.innerHTML = `<span class="t-prompt">guest@aarathi:~$</span> ${escapeHTML(rawCmd)}`;
+        terminalHistory.appendChild(cmdLine);
+
+        const responseLine = document.createElement('div');
+        responseLine.style.marginBottom = '0.6rem';
+
+        if (commands[rawCmd]) {
+          responseLine.innerHTML = commands[rawCmd];
+        } else {
+          responseLine.innerHTML = `<span style="color:#ef4444;">Command not recognized: '${escapeHTML(rawCmd)}'. Type <span class="t-keyword">'help'</span> for a list of commands.</span>`;
+        }
+
+        terminalHistory.appendChild(responseLine);
+
+        // Auto scroll terminal to bottom
+        const terminalBody = terminalHistory.closest('.terminal__body');
+        if (terminalBody) {
+          terminalBody.scrollTop = terminalBody.scrollHeight;
+        }
+      }
+    });
+  }
+}
+
+function escapeHTML(str) {
+  return str.replace(/[&<>'"]/g, 
+    tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag)
+  );
+}
+
+/* ==========================================================================
+   4. TIMELINE TABS
+   ========================================================================== */
+function initTimelineTabs() {
+  const tabBtns = document.querySelectorAll('.timeline-tab-btn');
+  const panes = document.querySelectorAll('.timeline-pane');
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn.dataset.target;
+      tabBtns.forEach(b => b.classList.remove('active'));
+      panes.forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      const activePane = document.getElementById(target);
+      if (activePane) activePane.classList.add('active');
+    });
   });
 }
 
-function applyTiltEffect(selector, maxTilt) {
-  const cards = document.querySelectorAll(selector);
-  cards.forEach((card) => {
-    card.addEventListener("mousemove", (event) => {
+/* ==========================================================================
+   5. PROJECT FILTER SWITCHER
+   ========================================================================== */
+function initProjectFilters() {
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const projectCards = document.querySelectorAll('.project-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.dataset.filter;
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      projectCards.forEach(card => {
+        const categories = card.dataset.category ? card.dataset.category.split(' ') : [];
+        if (filter === 'all' || categories.includes(filter)) {
+          card.style.display = 'flex';
+          setTimeout(() => { card.style.opacity = '1'; card.style.transform = 'scale(1)'; }, 50);
+        } else {
+          card.style.opacity = '0';
+          card.style.transform = 'scale(0.95)';
+          setTimeout(() => { card.style.display = 'none'; }, 250);
+        }
+      });
+    });
+  });
+}
+
+/* ==========================================================================
+   6. SCROLL & ACTIVE LINK EFFECTS
+   ========================================================================== */
+function initScrollEffects() {
+  const scrollTopBtn = document.getElementById('scroll-top-btn');
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav__link');
+
+  window.addEventListener('scroll', () => {
+    const scrollY = window.pageYOffset;
+
+    if (scrollTopBtn) {
+      if (scrollY > 500) {
+        scrollTopBtn.classList.add('visible');
+      } else {
+        scrollTopBtn.classList.remove('visible');
+      }
+    }
+
+    sections.forEach(current => {
+      const sectionHeight = current.offsetHeight;
+      const sectionTop = current.offsetTop - 140;
+      const sectionId = current.getAttribute('id');
+      const activeLink = document.querySelector(`.nav__link[href*="${sectionId}"]`);
+
+      if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+        navLinks.forEach(l => l.classList.remove('active'));
+        if (activeLink) activeLink.classList.add('active');
+      }
+    });
+  });
+
+  if (scrollTopBtn) {
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+}
+
+/* ==========================================================================
+   7. 3D CARD TILT EFFECT
+   ========================================================================== */
+function initCardTilts() {
+  const cards = document.querySelectorAll('.glass-card, .pub-card, .bento-item, .project-card');
+
+  cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
       const rect = card.getBoundingClientRect();
-      const x = event.clientX - rect.left;
-      const y = event.clientY - rect.top;
-      const rotateY = ((x / rect.width) * 2 - 1) * maxTilt;
-      const rotateX = (1 - (y / rect.height) * 2) * maxTilt;
-      card.style.transform = "perspective(900px) rotateX(" + rotateX + "deg) rotateY(" + rotateY + "deg)";
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const rotateX = ((y - centerY) / centerY) * -5;
+      const rotateY = ((x - centerX) / centerX) * 5;
+
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
     });
-    card.addEventListener("mouseleave", () => {
-      card.style.transform = "";
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
     });
   });
 }
 
-applyTiltEffect(".home__content", 6);
-applyTiltEffect(".services__content", 6);
-applyTiltEffect(".portfolio__content", 5);
+/* ==========================================================================
+   8. CLIPBOARD & TOAST HELPERS
+   ========================================================================== */
+function initClipboardHelpers() {
+  const copyButtons = document.querySelectorAll('.copy-btn');
+
+  copyButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const textToCopy = btn.dataset.copy;
+      if (!textToCopy) return;
+
+      navigator.clipboard.writeText(textToCopy).then(() => {
+        showToast(`Copied to clipboard: ${textToCopy}`);
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '<i class="uil uil-check"></i> Copied!';
+        setTimeout(() => {
+          btn.innerHTML = originalText;
+        }, 2000);
+      });
+    });
+  });
+}
+
+function showToast(message) {
+  let container = document.querySelector('.toast-container');
+  if (!container) {
+    container = document.createElement('div');
+    container.className = 'toast-container';
+    document.body.appendChild(container);
+  }
+
+  const toast = document.createElement('div');
+  toast.className = 'toast';
+  toast.innerHTML = `<i class="uil uil-check-circle" style="color:#00f2fe;font-size:1.2rem;"></i> ${message}`;
+
+  container.appendChild(toast);
+
+  setTimeout(() => {
+    toast.style.opacity = '0';
+    toast.style.transform = 'translateY(10px)';
+    toast.style.transition = 'all 0.3s ease';
+    setTimeout(() => toast.remove(), 300);
+  }, 3000);
+}

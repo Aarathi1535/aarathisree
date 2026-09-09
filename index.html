@@ -1,1207 +1,1414 @@
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aarathisree Balla - Software & Data Enthusiast | AI & Backend Developer | Research Fellow at CVIT, IIIT Hyderabad. Specializing in Machine Learning, LLMs, Computer Vision, and scalable backend systems.">
+    <meta name="keywords" content="Aarathisree Balla, AI Developer, Backend Developer, Data Science, Machine Learning, CVIT IIIT Hyderabad, QUIC HTTP/3, LLMs, Computer Vision, Python, Portfolio">
+    <meta name="author" content="Aarathisree Balla">
 
-        <!--==================== UNICONS ====================-->
-        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-        
-        <!--==================== SWIPER CSS ====================-->
-        <link rel="stylesheet" href="./packages/css/swiper-bundle.min.css">
+    <!-- Open Graph / Social Meta -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Aarathisree Balla | AI & Backend Developer | Research Fellow">
+    <meta property="og:description" content="Research Fellow at CVIT, IIIT Hyderabad. Building intelligent AI systems, Explainable AI models, and scalable backend platforms.">
+    
+    <title>Aarathisree Balla | AI & Backend Developer | Research Fellow</title>
 
-        <!--==================== CSS ====================-->
-        <link rel="stylesheet" href="./packages/css/styles.css">
-        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- UNICONS ICON FONT -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
 
-        <title>Aarathisree Balla</title>
-    </head>
-       
+    <!-- CUSTOM STYLES -->
+    <link rel="stylesheet" href="./packages/css/styles.css">
+</head>
+<body>
 
-    <body>
-        
-        <div id="vanta-bg"></div>
-        <!--==================== HEADER ====================-->
-        <header class="header" id="header">
-            <nav class="nav container">
-                <a href="#" class="nav__logo">Aarathisree Balla</a>
-                <div class="nav__menu" id="nav-menu">
-                    <ul class="nav__list grid">
-                        <li class="nav__item">
-                            <a href="#home" class="nav__link">
-                                <i class="uil uil-estate nav__icon"></i>Home
-                            </a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="#about" class="nav__link">
-                                <i class="uil uil-user nav__icon"></i>About
-                            </a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="#skills" class="nav__link">
-                                <i class="uil uil-file-alt nav__icon"></i>Skills
-                            </a>
-                        </li>
-                          <li class="nav__item">
-                            <a href="#services" class="nav__link">
-                                <i class="uil uil-briefcase-alt nav__icon"></i>Services
-                            </a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="#projects" class="nav__link">
-                                <i class="uil uil-scenery nav__icon"></i>Projects                               
-                            </a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="#contact" class="nav__link">
-                                <i class="uil uil-message nav__icon"></i>Contact                               
-                            </a>
-                        </li>
-                    </ul>
-                    <i class="uil uil-times nav__close" id="nav-close"></i>
+    <!-- THREE.JS INTERACTIVE NEURAL CONSTELLATION CANVAS -->
+    <div id="neural-canvas"></div>
+    <div class="bg-ambient-glow glow-1"></div>
+    <div class="bg-ambient-glow glow-2"></div>
+    <div class="bg-ambient-glow glow-3"></div>
+
+    <!-- FLOATING GLASS NAVBAR -->
+    <header class="navbar-wrapper">
+        <nav class="navbar" id="navbar">
+            <a href="#home" class="nav__brand">
+                <img src="./packages/images/aara-1.jpg" alt="Aarathisree Balla" class="nav__brand-avatar">
+                <span>Aarathi<span class="text-gradient">sree</span></span>
+            </a>
+
+            <div class="nav__menu" id="nav-menu">
+                <a href="#home" class="nav__link active"><i class="uil uil-estate"></i> Home</a>
+                <a href="#highlights" class="nav__link"><i class="uil uil-award"></i> Highlights</a>
+                <a href="#about" class="nav__link"><i class="uil uil-user"></i> About</a>
+                <a href="#publications" class="nav__link"><i class="uil uil-book-open"></i> Publications</a>
+                <a href="#experience" class="nav__link"><i class="uil uil-briefcase-alt"></i> Experience</a>
+                <a href="#projects" class="nav__link"><i class="uil uil-layer-group"></i> Projects</a>
+                <a href="#entrepreneurship" class="nav__link"><i class="uil uil-rocket"></i> Ventures</a>
+                <a href="#skills" class="nav__link"><i class="uil uil-brain"></i> Skills</a>
+                <a href="#contact" class="nav__link"><i class="uil uil-envelope"></i> Contact</a>
+            </div>
+
+            <div class="nav__actions">
+                <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle Theme" title="Toggle Theme">
+                    <i class="uil uil-sun" id="theme-icon"></i>
+                </button>
+                <a href="#contact" class="btn btn-primary btn-sm" style="display: inline-flex;">
+                    <span>Let's Connect</span>
+                    <i class="uil uil-arrow-up-right"></i>
+                </a>
+                <div class="mobile-toggle" id="mobile-toggle" role="button" aria-label="Toggle Menu">
+                    <i class="uil uil-apps"></i>
                 </div>
-                <div class="nav__btns">
-                    <a href="#contact" class="button button--small nav__cta">Let's Connect</a>
-                    <i class="uil uil-moon change-theme" id="theme-button" aria-label="Toggle light and dark theme" role="button" tabindex="0"></i>
-                    <div class="nav__toggle" id="nav-toggle">
-                        <i class="uil uil-apps"></i>
-                    </div>
-                </div>
-            </nav>
-        </header>
+            </div>
+        </nav>
+    </header>
 
-        <!--==================== MAIN ====================-->
-        <main class="main">
-            <!--==================== HOME ====================-->
-            <section class="home section" id="home">
-                <div class="home__container container grid">
-                    <div class="home__content grid">
-                        <div class="home__social">
-                            <a href="https://www.linkedin.com/in/aarathisree-balla-349b66284/" target="_blank" class="home__social-icon">
-                                <i class="uil uil-linkedin-alt"></i>
-                            </a>
-                            <a href="https://leetcode.com/u/aarathi_1535/" target="_blank" class="home__social-icon">
-                                <i class="uil uil-brackets-curly"></i>
-                            </a>
-                            <a href="https://github.com/Aarathi1535" target="_blank" class="home__social-icon">
-                                <i class="uil uil-github-alt"></i>
-                            </a>
-                            <a href="https://medium.com/@aarathisree.1535" target="_blank" class="home__social-icon">
-                                <i class="uil uil-medium-m"></i>
-                            </a>
-                        </div>
+    <!-- MAIN CONTENT -->
+    <main>
 
-                        <div class="home__img">
-                            <svg class="home__blob" viewBox="0 0 200 187" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                <mask id="mask0" mask-type="alpha">
-                                    <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 165.547 
-                                    130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 129.362C2.45775 
-                                    97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 -0.149132 97.9666 
-                                    0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"/>
-                                </mask>
-                                <g mask="url(#mask0)">
-                                    <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 
-                                    165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 
-                                    129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 
-                                    -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"/>
-                                    <image class="home__blob-img" x="" xlink:href="packages/images/aara-1.jpg"/>
-                                </g>
-                            </svg>
-                        </div>
-
-                        <div class="home__data">
-                            <h1 class="home__title animate-fadeInUp" class="home__title">Hi, I'am Aarathisree Balla</h1>
-                            <h3 class="home__subtitle">Python Developer</h3>
-                            <p class="home__description">I am passionate about AI, ML, and development in Python. Experienced in developing intelligent systems and contributing to impactful research.</p>
-                            <a href="#contact" class="button button--flex home__button">
-                                Contact Me<i class="uil uil-message button__icon"></i>
-                            </a>
+        <!-- ==================== HERO SECTION ==================== -->
+        <section class="hero section" id="home">
+            <div class="container hero__grid">
+                
+                <!-- Hero Left: Bio & CTAs -->
+                <div class="hero__content">
+                    <div class="hero__badge-wrapper">
+                        <div class="hero__status-badge">
+                            <span class="status-dot"></span>
+                            <span>Research Fellow @ CVIT, IIIT Hyderabad</span>
                         </div>
                     </div>
 
-                    <div class="home__scroll">
-                        <a href="#about" class="home__scroll-button button--flex">
-                            <i class="uil uil-mouse-alt home__scroll-mouse"></i>
-                            <span class="home__scroll-name">Scroll Down</span>
-                            <i class="uil uil-arrow-down home__scroll-arrow"></i>
+                    <h1 class="hero__title">
+                        Architecting <span class="text-gradient">Intelligent AI</span> & Scalable Systems.
+                    </h1>
+
+                    <div class="hero__subtitle">
+                        <span>Hi, I'm Aarathisree —</span>
+                        <span class="typewriter-text code-font">AI & Backend Developer</span>
+                    </div>
+
+                    <p class="hero__description">
+                        Conducting cutting-edge AI & Computer Vision research under Prof. C. V. Jawahar at IIIT Hyderabad. Specializing in LLMs, Explainable AI, high-accuracy classification systems, and high-throughput Python/SQL backend architectures.
+                    </p>
+
+                    <div class="hero__cta-group">
+                        <a href="#projects" class="btn btn-primary">
+                            <span>Explore Projects</span>
+                            <i class="uil uil-arrow-right"></i>
+                        </a>
+                        <a href="#publications" class="btn btn-secondary">
+                            <i class="uil uil-file-bookmark-alt"></i>
+                            <span>Research Papers</span>
+                        </a>
+                    </div>
+
+                    <div class="hero__socials">
+                        <a href="https://www.linkedin.com/in/aarathisree-balla-349b66284/" target="_blank" class="social-pill" title="LinkedIn">
+                            <i class="uil uil-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/Aarathi1535" target="_blank" class="social-pill" title="GitHub">
+                            <i class="uil uil-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://leetcode.com/u/aarathi_1535/" target="_blank" class="social-pill" title="LeetCode">
+                            <i class="uil uil-brackets-curly"></i>
+                            <span>LeetCode</span>
+                        </a>
+                        <a href="https://medium.com/@aarathisree.1535" target="_blank" class="social-pill" title="Medium - In Plain English">
+                            <i class="uil uil-medium-m"></i>
+                            <span>Medium</span>
                         </a>
                     </div>
                 </div>
-            </section>
 
-            <!--==================== ABOUT ====================-->
-            <section class="about section" id="about" >
-                <h2 class="section__title">About Me</h2>
-                <span class="section__subtitle">My Introduction</span>
+                <!-- Hero Right: Live Interactive AI CLI Terminal -->
+                <div class="hero__terminal glass-card" id="hero-terminal">
+                    <div class="terminal__header">
+                        <div class="terminal__dots">
+                            <span class="terminal__dot dot-red"></span>
+                            <span class="terminal__dot dot-yellow"></span>
+                            <span class="terminal__dot dot-green"></span>
+                        </div>
+                        <div class="terminal__tabs">
+                            <button class="terminal__tab active" data-target="pane-profile">profile.py</button>
+                            <button class="terminal__tab" data-target="pane-research">research.log</button>
+                            <button class="terminal__tab" data-target="pane-cli">terminal.sh</button>
+                        </div>
+                    </div>
 
-                <div class="about__container container grid">
-                    <img src="packages/images/aara-2.jpg" alt="" class="about__img">
-                    <div class="about__data">
-                        <p class="about__description">
-                            Data Science enthusiast with a strong foundation in machine learning and data analytics, specializing in predictive modeling and automation. 
-                           Experienced in developing AI-driven solutions, including crop recommendation systems and automated answer sheet evaluation. 
-                          Skilled in Python, SQL, and various data analytical tools, with hands-on experience in deploying applications and optimizing algorithms for efficiency. 
-                          Passionate about leveraging data-driven insights to enhance decision-making in various domains, including agriculture and fintech.
-                        </p>
-                        <div class="about__info">
-                            <div>
-                                <span class="about__info-title">01</span>
-                                <span class="about__info-name">Research <br> publication</span>
-                            </div>
-                            <div>
-                                <span class="about__info-title">05+</span>
-                                <span class="about__info-name">Completed <br> certifications</span>
-                            </div>
-                            <div>
-                                <span class="about__info-title">05+</span>
-                                <span class="about__info-name">Projects<br>worked</span>
-                            </div>
+                    <div class="terminal__body">
+                        <!-- Pane 1: profile.py -->
+                        <div class="terminal__pane active" id="pane-profile">
+                            <p class="t-comment"># Developer & Researcher Profile</p>
+                            <p><span class="t-keyword">class</span> <span class="t-fn">Aarathisree</span>:</p>
+                            <p style="padding-left: 1.2rem;"><span class="t-var">role</span> = <span class="t-str">"Research Fellow & AI/Backend Engineer"</span></p>
+                            <p style="padding-left: 1.2rem;"><span class="t-var">affiliation</span> = <span class="t-str">"CVIT, IIIT Hyderabad"</span></p>
+                            <p style="padding-left: 1.2rem;"><span class="t-var">advisor</span> = <span class="t-str">"Prof. C. V. Jawahar"</span></p>
+                            <p style="padding-left: 1.2rem;"><span class="t-var">cgpa</span> = <span class="t-num">9.39</span> <span class="t-comment"># Pragati Eng. (CSE-DS)</span></p>
+                            <p style="padding-left: 1.2rem;"><span class="t-var">gate_da_2026</span> = <span class="t-str">"AIR 2412 (Top 3%)"</span></p>
+                            <p style="padding-left: 1.2rem;"><span class="t-var">publications</span> = [<span class="t-str">"IJSRET 2026"</span>, <span class="t-str">"IEEE PuneCon 2024"</span>]</p>
+                            <p style="padding-left: 1.2rem;"><span class="t-var">core_stack</span> = [<span class="t-str">"Python"</span>, <span class="t-str">"PyTorch"</span>, <span class="t-str">"LLMs"</span>, <span class="t-str">"SQL"</span>, <span class="t-str">"MongoDB"</span>, <span class="t-str">"Flask/Django"</span>, <span class="t-str">"XAI"</span>]</p>
+                            <p><span class="t-keyword">def</span> <span class="t-fn">get_status</span>(self):</p>
+                            <p style="padding-left: 1.2rem;"><span class="t-keyword">return</span> <span class="t-str">"Ready to engineer high-impact AI/backend solutions 🚀"</span></p>
                         </div>
 
+                        <!-- Pane 2: research.log -->
+                        <div class="terminal__pane" id="pane-research">
+                            <p class="t-comment">[2026-04-10 14:22:01] Initializing QUIC/HTTP-3 Flow Classifier...</p>
+                            <p><span class="t-var">[METRIC]</span> Extracted flow features: packet_rate, byte_rate, IAT, connection_count</p>
+                            <p><span class="t-var">[TRAIN]</span> Random Forest Classifier with Stratified 10-Fold CV</p>
+                            <p><span class="t-str">[RESULT]</span> Detection Accuracy: <span class="t-num">95.8%</span> | ROC-AUC: <span class="t-num">0.97</span></p>
+                            <p><span class="t-var">[XAI]</span> Applying SHAP (TreeExplainer) & LIME for feature attributions...</p>
+                            <p><span class="t-str">[STATUS]</span> Published in IJSRET Vol. 12 Issue 2 (ISSN: 2395-566X) ✨</p>
+                            <p class="t-comment">[2024-12-15] EduEvaluator Subjective Grading Framework:</p>
+                            <p><span class="t-str">[RESULT]</span> Gemini 1.5 Pro + OCR Pipeline: <span class="t-num">86.5%</span> Accuracy (IEEE PuneCon 2024)</p>
+                        </div>
+
+                        <!-- Pane 3: terminal.sh (Interactive) -->
+                        <div class="terminal__pane" id="pane-cli">
+                            <div id="terminal-history">
+                                <p class="t-comment">Welcome to Aarathisree CLI v2.0. Type <span class="t-keyword">'help'</span> for a list of commands.</p>
+                            </div>
+                            <div class="interactive-cmd-form">
+                                <span class="t-prompt">guest@aarathi:~$</span>
+                                <input type="text" id="terminal-cli-input" class="interactive-cmd-input" placeholder="type 'skills', 'research', 'hire'..." autocomplete="off" spellcheck="false">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ==================== HIGHLIGHTS & BENTO GRID ==================== -->
+        <section class="section" id="highlights" style="padding-top: 2rem;">
+            <div class="container">
+                <div class="section__header">
+                    <span class="section__tag"><i class="uil uil-trophy"></i> Key Accolades</span>
+                    <h2 class="section__title">Proven Impact & Milestones</h2>
+                    <p class="section__subtitle">A snapshot of academic excellence, national competitive achievements, and impactful research.</p>
+                </div>
+
+                <div class="bento-grid">
+                    <!-- Bento 1: IIIT Hyderabad Research Fellow (Featured Span 7) -->
+                    <div class="bento-item glass-card card-cyan bento-span-7">
+                        <div class="bento-top-row">
+                            <div class="bento-icon-wrapper bento-icon-cyan">
+                                <i class="uil uil-university"></i>
+                            </div>
+                            <span class="bento-pill-tag" style="border-color: rgba(0, 242, 254, 0.3); color: var(--accent-cyan);">
+                                <span class="status-dot" style="width: 6px; height: 6px;"></span> Active Fellowship
+                            </span>
+                        </div>
+                        <div>
+                            <div class="bento-stat-sub">Research Position & Mentorship</div>
+                            <h3 class="bento-title">Research Fellow @ CVIT, IIIT Hyderabad</h3>
+                            <p class="bento-desc">Working under the mentorship of <strong>Prof. C. V. Jawahar</strong> on the <strong>Exam Evaluation Platform</strong> — a role-based digital exam evaluation system for managing exam scripts and streamlining TA-assisted grading, featuring an interactive grading canvas, audit trails, secure immutable storage, and scalable deployment.</p>
+                            <div class="bento-tags">
+                                <span class="bento-mini-tag">Exam Evaluation Platform</span>
+                                <span class="bento-mini-tag">Interactive Canvas</span>
+                                <span class="bento-mini-tag">Audit Trails</span>
+                                <span class="bento-mini-tag">Immutable Storage</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bento 2: GATE DA 2026 (Span 5) -->
+                    <div class="bento-item glass-card card-purple bento-span-5">
+                        <div class="bento-top-row">
+                            <div class="bento-icon-wrapper bento-icon-purple">
+                                <i class="uil uil-award"></i>
+                            </div>
+                            <span class="bento-pill-tag">
+                                <i class="uil uil-chart-line"></i> Top 3% Nationwide
+                            </span>
+                        </div>
+                        <div>
+                            <div class="bento-stat text-gradient-purple">AIR 2412</div>
+                            <h3 class="bento-title">GATE DA 2026 Rank</h3>
+                            <p class="bento-desc">Achieved All India Rank 2412 in the Graduate Aptitude Test in Engineering for Data Science & Artificial Intelligence.</p>
+                            <div class="bento-tags">
+                                <span class="bento-mini-tag">Data Science</span>
+                                <span class="bento-mini-tag">Artificial Intelligence</span>
+                                <span class="bento-mini-tag">National Examination</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bento 3: Academic Merit (Span 4) -->
+                    <div class="bento-item glass-card card-amber bento-span-4">
+                        <div class="bento-top-row">
+                            <div class="bento-icon-wrapper bento-icon-amber">
+                                <i class="uil uil-graduation-cap"></i>
+                            </div>
+                            <span class="bento-pill-tag">
+                                <i class="uil uil-medal"></i> Distinction
+                            </span>
+                        </div>
+                        <div>
+                            <div class="bento-stat" style="color: var(--accent-amber);">9.39 CGPA</div>
+                            <h3 class="bento-title">Pragati Engineering College</h3>
+                            <p class="bento-desc">B.Tech in Computer Science & Engineering (Data Science) with top-tier departmental standing (2022–2026).</p>
+                            <div class="bento-tags">
+                                <span class="bento-mini-tag">CSE - Data Science</span>
+                                <span class="bento-mini-tag">Batch 2022–2026</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bento 4: 2 Publications (Span 4) -->
+                    <div class="bento-item glass-card card-cyan bento-span-4">
+                        <div class="bento-top-row">
+                            <div class="bento-icon-wrapper bento-icon-cyan">
+                                <i class="uil uil-file-check-alt"></i>
+                            </div>
+                            <span class="bento-pill-tag">
+                                <i class="uil uil-check-circle"></i> Peer-Reviewed
+                            </span>
+                        </div>
+                        <div>
+                            <div class="bento-stat text-gradient-cyan">02 Papers</div>
+                            <h3 class="bento-title">Published Research</h3>
+                            <p class="bento-desc">IJSRET Journal 2026 (QUIC/HTTP-3 DDoS with XAI, 95.8% Acc) & IEEE PuneCon 2024 (LLM EduEvaluator).</p>
+                            <div class="bento-tags">
+                                <span class="bento-mini-tag">IJSRET 2026</span>
+                                <span class="bento-mini-tag">IEEE PuneCon</span>
+                                <span class="bento-mini-tag">Explainable AI</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bento 5: AICTE Rising Star (Span 4) -->
+                    <div class="bento-item glass-card card-emerald bento-span-4">
+                        <div class="bento-top-row">
+                            <div class="bento-icon-wrapper bento-icon-emerald">
+                                <i class="uil uil-star"></i>
+                            </div>
+                            <span class="bento-pill-tag">
+                                <i class="uil uil-globe"></i> National Level
+                            </span>
+                        </div>
+                        <div>
+                            <div class="bento-stat text-gradient" style="background: linear-gradient(135deg, #10b981 0%, #00f2fe 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Top 1000</div>
+                            <h3 class="bento-title">AICTE Rising Star 2026</h3>
+                            <p class="bento-desc">Recognized and featured among the top 1000 emerging tech innovators and contributors across India.</p>
+                            <div class="bento-tags">
+                                <span class="bento-mini-tag">Govt of India</span>
+                                <span class="bento-mini-tag">Tech Innovator</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!--==================== SKILLS ====================-->
-            
-            <section class="skills section" id="skills">
-                <h2 class="section__title">Skills</h2>
-                <span class="section__subtitle">My technical level</span>
 
-                <div class="skills__container container grid">
-                    <div>
-                         <!--==================== SKILL-1 ====================-->
-                        <div class="skills__content skills__open">
-                            <div class="skills__header">
-                                <i class="uil uil-analytics skills__icon"></i>
-                               <div>
-                                   <h1 class="skills__title">Python Developer</h1>
-                               </div>
-
-                               <i class="uil uil-angle-down skills__arrow"></i>
-                            </div>
-                            <div class="skills__list grid">
-                                <div class="skills__data">
-                                    <div class="skills__titles">
-                                        <h3 class="skills__name">Python</h3>
-                                        <span class="skills__number">80%</span>
-                                    </div>
-                                    <div class="skills__bar">
-                                        <span class="skills__percentage skills__python"></span>
-                                    </div>
-                                </div>
-                               <div class="skills__data">
-                                   <div class="skills__titles">
-                                       <h3 class="skills__name">Flask</h3>
-                                       <span class="skills__number">60%</span>
-                                   </div>
-                                   <div class="skills__bar">
-                                       <span class="skills__percentage skills__tab"></span>
-                                   </div>
-                               </div>
-                               <div class="skills__data">
-                                   <div class="skills__titles">
-                                       <h3 class="skills__name">SQL</h3>
-                                       <span class="skills__number">50%</span>
-                                   </div>
-                                   <div class="skills__bar">
-                                       <span class="skills__percentage skills__sql"></span>
-                                   </div>
-                               </div>
-                               <div class="skills__data">
-                                   <div class="skills__titles">
-                                       <h3 class="skills__name">HTML, CSS</h3>
-                                       <span class="skills__number">40%</span>
-                                   </div>
-                                   <div class="skills__bar">
-                                       <span class="skills__percentage skills__google"></span>
-                                   </div>
-                               </div>
-                              <div class="skills__data">
-                                   <div class="skills__titles">
-                                       <h3 class="skills__name">Data Structures and Algorithms</h3>
-                                       <span class="skills__number">70%</span>
-                                   </div>
-                                   <div class="skills__bar">
-                                       <span class="skills__percentage skills__google"></span>
-                                   </div>
-                               </div>
-                              <div class="skills__data">
-                                   <div class="skills__titles">
-                                       <h3 class="skills__name">Git</h3>
-                                       <span class="skills__number">50%</span>
-                                   </div>
-                                   <div class="skills__bar">
-                                       <span class="skills__percentage skills__google"></span>
-                                   </div>
-                               </div>
-                            </div>
+        <!-- ==================== ABOUT SECTION ==================== -->
+        <section class="about section" id="about">
+            <div class="container">
+                <div class="about__grid">
+                    
+                    <!-- Left: Portrait with holographic frame -->
+                    <div class="about__visual-card">
+                        <div class="about__img-frame glass-card">
+                            <img src="./packages/images/aara-2.jpg" alt="Aarathisree Balla">
                         </div>
-                         <!--==================== SKILLS 2 ====================-->
-                        <div class="skills__content skills__close">
-                            <div class="skills__header">
-                                <i class="uil uil-money-bill skills__icon"></i>
-                               <div>
-                                   <h1 class="skills__title">Data Scientist</h1>
-                               </div>
-
-                               <i class="uil uil-angle-down skills__arrow"></i>
-                            </div>
-                            <div class="skills__list grid">
-                                <div class="skills__data">
-                                    <div class="skills__titles">
-                                        <h3 class="skills__name">Pandas & NumPy</h3>
-                                        <span class="skills__number">80%</span>
-                                    </div>
-                                    <div class="skills__bar">
-                                        <span class="skills__percentage skills__bank"></span>
-                                    </div>
-                               </div>
-                               <div class="skills__data">
-                                   <div class="skills__titles">
-                                       <h3 class="skills__name">Data Science & AI</h3>
-                                       <span class="skills__number">60%</span>
-                                   </div>
-                                   <div class="skills__bar">
-                                       <span class="skills__percentage skills__counter"></span>
-                                   </div>
-                               </div>
-                               <div class="skills__data">
-                                    <div class="skills__titles">
-                                      <h3 class="skills__name"> Matplotlib & Seaborn</h3>
-                                      <span class="skills__number">50%</span>
-                                    </div>
-                                    <div class="skills__bar">
-                                       <span class="skills__percentage skills__google"></span>
-                                    </div>
-                                </div>
-                                <div class="skills__data">
-                                   <div class="skills__titles">
-                                       <h3 class="skills__name">Machine Learning</h3>
-                                       <span class="skills__number">90%</span>
-                                   </div>
-                                   <div class="skills__bar">
-                                       <span class="skills__percentage skills__office"></span>
-                                   </div>
-                                </div>
-                              <div class="skills__data">
-                                   <div class="skills__titles">
-                                       <h3 class="skills__name">Jupyter Notebooks/Google Colab</h3>
-                                       <span class="skills__number">90%</span>
-                                   </div>
-                                   <div class="skills__bar">
-                                       <span class="skills__percentage skills__office"></span>
-                                   </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div>
                         
-                </div>
-            </section>
+                        <div class="floating-badge badge-top-right">
+                            <i class="uil uil-brain" style="color: var(--accent-cyan);"></i>
+                            <span>LLMs & Vision AI</span>
+                        </div>
 
-              <!--==================== QUALIFICATION ====================-->
-        <section class="qualification__section">
-            <h2 class="section__title">Qualification</h2>
-            <span class="section__subtitle">My personal journey</span>
-
-            <div class="qualification__container container">
-                <div class="qualification__tabs">
-                    <div class="qualification__button button--flex qualification__active" data-target="#education">
-                        <i class="uil uil-graduation-cap qualification__icon"></i>
-                        Education
+                        <div class="floating-badge badge-bottom-left">
+                            <i class="uil uil-server" style="color: var(--accent-violet);"></i>
+                            <span>Scalable Backend</span>
+                        </div>
                     </div>
 
-                     <div class="qualification__button button--flex" data-target="#work">
-                        <i class="uil uil-graduation-cap qualification__icon"></i>
-                        Work
+                    <!-- Right: Story & Focus Pillars -->
+                    <div class="about__data">
+                        <span class="section__tag"><i class="uil uil-user"></i> My Story</span>
+                        <h2 class="section__title">Bridging Artificial Intelligence with High-Performance Backend Systems</h2>
+                        <p class="hero__description" style="max-width: 100%;">
+                            I am a Software & Data Enthusiast passionate about turning sophisticated machine learning algorithms into production-ready, reliable, and user-centric software. With hands-on research at CVIT, IIIT Hyderabad and deep experience building full-stack platforms, I thrive at the intersection of AI research, Explainable AI (XAI), and distributed backend architectures.
+                        </p>
+
+                        <div class="about__pillars">
+                            <div class="about__pillar glass-card">
+                                <i class="uil uil-eye pillar-icon"></i>
+                                <div>
+                                    <h4 class="pillar-title">Applied Computer Vision & LLMs</h4>
+                                    <p class="pillar-desc">Engineering Vision-Language grading pipelines, automated OCR document extractors, and multimodal intelligence systems.</p>
+                                </div>
+                            </div>
+
+                            <div class="about__pillar glass-card">
+                                <i class="uil uil-shield-check pillar-icon" style="color: var(--accent-violet);"></i>
+                                <div>
+                                    <h4 class="pillar-title">Cybersecurity & Explainable AI (XAI)</h4>
+                                    <p class="pillar-desc">Pioneering network flood detection in encrypted HTTP/3 protocols with SHAP and LIME model transparency.</p>
+                                </div>
+                            </div>
+
+                            <div class="about__pillar glass-card">
+                                <i class="uil uil-database pillar-icon" style="color: var(--accent-emerald);"></i>
+                                <div>
+                                    <h4 class="pillar-title">Scalable Backend Engineering</h4>
+                                    <p class="pillar-desc">Architecting robust REST APIs, SQL/NoSQL databases, asynchronous queues, and automated data pipelines with Python, Flask, Django, and Java.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
                 </div>
-
-                <div class="qualification__sections">
-            <!--==================== QUALIFICATION CONTENT 1 ====================-->
-            <div class="qualification__content qualification__active" data-content id="education">
-             <!--==================== QUALIFICATION 1 ====================--> 
-             <div class="qualification__data">
-                 <div>
-                     <h3 class="qualification__title">Bachelor of Technology</h3>
-                     <span class="qualification__subtitle">Andhra Pradesh, India</span>
-                     <div class="qualification__calendar">
-                        <i class="uil uil-calendar-alt"></i>
-                        2022 - 2026
-                     </div>
-                 </div>
-
-                 <div>
-                     <span class="qualification__rounder"></span>
-                     <span class="qualification__line"></span>
-                 </div>
-             </div>
-             
-             <!--==================== QUALIFICATION 2 ====================--> 
-             <div class="qualification__data">
-                <div></div>
-                <div>
-                   <span class="qualification__rounder"></span>
-                   <span class="qualification__line"></span>
-                </div>
-
-                <div>
-                    <h3 class="qualification__title">Senior Secondary Education</h3>
-                    <span class="qualification__subtitle">Andhra Pradesh, India</span>
-                    <div class="qualification__calendar">
-                       <i class="uil uil-calendar-alt"></i>
-                       2020 - 2022
-                    </div>
-                </div>
-            </div> 
-
-            <!--==================== QUALIFICATION 3 ====================--> 
-            <div class="qualification__data">
-                <div>
-                    <h3 class="qualification__title">Primary and Secondary Education</h3>
-                    <span class="qualification__subtitle">Al Jubail, Saudi Arabia</span>
-                    <div class="qualification__calendar">
-                       <i class="uil uil-calendar-alt"></i>
-                       2008 - 2020
-                    </div>
-                </div>
-
-                <div>
-                    <span class="qualification__rounder"></span>
-                    <span class="qualification__line"></span>
-                </div>
-            </div> 
-            </div>
-            
-            <!--==================== QUALIFICATION CONTENT 2 ====================-->
-          <div class="qualification__content" data-content id="work">
-
-  <!--==================== QUALIFICATION 1 ====================-->
-  <div class="qualification__data">
-    <div>
-      <h3 class="qualification__title">Data Analyst Intern</h3>
-      <span class="qualification__subtitle">Unstop</span>
-      <a href="https://www.unstop.com" class="button button--flex button--small portfolio__button" target="_blank">
-        Project Work
-        <i class="uil uil-arrow-right button__icon"></i>
-      </a>
-      <div class="qualification__calendar">
-        <i class="uil uil-calendar-alt"></i>
-        Dec 2025 - Feb 2026
-      </div>
-    </div>
-    <div>
-      <span class="qualification__rounder"></span>
-      <span class="qualification__line"></span>
-    </div>
-    <div></div>
-  </div>
-
-  <!--==================== QUALIFICATION 2 ====================-->
-  <!--==================== QUALIFICATION 2 (TIMELINE WITH SUB-ROLES) ====================-->
- <div class="qualification__data">
-  <div></div>
-  <div>
-    <span class="qualification__rounder"></span>
-    <span class="qualification__line"></span>
-  </div>
-  <div>
-    <h3 class="qualification__title">Tech Journey</h3>
-    <span class="qualification__subtitle">Snapgro</span>
-       <a href="https://www.snapgro.in" class="button button--flex button--small portfolio__button" target="_blank">
-        Project Work
-        <i class="uil uil-arrow-right button__icon"></i>
-      </a>
-
-    <!-- Sub Timeline -->
-    <div class="qualification__subtimeline">
-
-      <!-- Sub-role 1 -->
- <div class="qualification__subdata">
-        <div>
-          <span class="qualification__subrounder"></span>
-          <!-- No line for last item -->
-        </div>
-        <div>
-          <h4 class="qualification__role">Tech Lead Intern</h4>
-          <div class="qualification__calendar">
-            <i class="uil uil-calendar-alt"></i> Sept 2025 – Present
-          </div>
-        </div>
-      </div>
-
-     
-
-      <!-- Sub-role 2 -->
-        
-      <div class="qualification__subdata">
-        <div>
-          <span class="qualification__subrounder"></span>
-          <span class="qualification__subline"></span>
-        </div>
-        <div>
-          <h4 class="qualification__role">App Developer Intern</h4>
-          <div class="qualification__calendar">
-            <i class="uil uil-calendar-alt"></i> July 2025 – Sept 2025
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-  <!--==================== QUALIFICATION 3 ====================-->
-  <div class="qualification__data">
-    <div>
-      <h3 class="qualification__title">Full Stack Developer</h3>
-      <span class="qualification__subtitle">TaraConnect</span>
-      <a href="https://www.taraconnect.in" class="button button--flex button--small portfolio__button" target="_blank">
-        Project Work
-        <i class="uil uil-arrow-right button__icon"></i>
-      </a>
-      <div class="qualification__calendar">
-        <i class="uil uil-calendar-alt"></i>
-        Feb 2025 – Apr 2025
-      </div>
-    </div>
-    <div>
-      <span class="qualification__rounder"></span>
-      <span class="qualification__line"></span>
-    </div>
-  </div>
-
-  <!--==================== QUALIFICATION 4 ====================-->
-  <div class="qualification__data">
-    <div></div>
-    <div>
-      <span class="qualification__rounder"></span>
-      <span class="qualification__line"></span>
-    </div>
-    <div>
-      <h3 class="qualification__title">Project & Research Intern</h3>
-      <span class="qualification__subtitle">Society for Data Science</span>
-      <a href="https://github.com/Aarathi1535/Edu-Evaluator" class="button button--flex button--small portfolio__button" target="_blank">
-        Project Work
-        <i class="uil uil-arrow-right button__icon"></i>
-      </a>
-      <div class="qualification__calendar">
-        <i class="uil uil-calendar-alt"></i>
-        Apr 2024 – Oct 2024
-      </div>
-    </div>
-  </div>
-
-  <!--==================== QUALIFICATION 5 ====================-->
-  <div class="qualification__data">
-    <div>
-      <h3 class="qualification__title">Python Developer Intern</h3>
-      <span class="qualification__subtitle">Infosys Springboard</span>
-      <a href="https://github.com/Aarathi1535/Infosys-Springboard-Internship-Project" class="button button--flex button--small portfolio__button" target="_blank">
-        Project Work
-        <i class="uil uil-arrow-right button__icon"></i>
-      </a>
-      <div class="qualification__calendar">
-        <i class="uil uil-calendar-alt"></i>
-        Apr 2024 – Jun 2024
-      </div>
-    </div>
-    <div>
-      <span class="qualification__rounder"></span>
-      <span class="qualification__line"></span>
-    </div>
-  </div>
-
-</div>
-
-             
-               </div>
             </div>
         </section>
 
-        <!--==================== ENTREPRENEURSHIP ====================-->
-        <section class="entrepreneurship section" id="entrepreneurship">
-            <h2 class="section__title">Entrepreneurship</h2>
-            <span class="section__subtitle">Building impact with Aarshiv</span>
 
-            <div class="entrepreneurship__container container">
-                <div class="entrepreneurship__card">
-                    <h3 class="entrepreneurship__title">Founder - Aarshiv</h3>
-                    <span class="entrepreneurship__meta">June 2025 - Present | Government Verified Startup</span>
-                    <p class="entrepreneurship__description">
-                        We are a government-verified startup building custom websites, AI products, and intelligent
-                        software from concept to launch in days, not months.
-                    </p>
-                    <ul class="entrepreneurship__work">
-                        <li>Built a data scraping tool under Aarshiv.</li>
-                        <li>Delivered website development for 2 firms.</li>
-                        <li>Provide technical support through AI-powered systems.</li>
-                        <li>Latest: Our AI Evaluator is being used by an MBBS coaching institute for intelligent test assessment, and we are scaling it as a SaaS platform.</li>
-                    </ul>
-                    <a href="https://aarshivai.netlify.app/" class="button button--flex button--small" target="_blank">
-                        Visit Aarshiv
-                        <i class="uil uil-arrow-right button__icon"></i>
-                    </a>
+        <!-- ==================== PUBLICATIONS SECTION ==================== -->
+        <section class="section" id="publications">
+            <div class="container">
+                <div class="section__header">
+                    <span class="section__tag"><i class="uil uil-book-open"></i> Peer-Reviewed Research</span>
+                    <h2 class="section__title">Published Research Papers</h2>
+                    <p class="section__subtitle">Original research contributions published in international peer-reviewed journals and IEEE conferences.</p>
                 </div>
-            </div>
-        </section>
-      
-        <!--==================== SERVICES ====================-->
-        <section class="services section" id="services">
-            <h2 class="section__title">Services</h2>
-            <span class="section__subtitle">What I offer</span>
 
-            <div class="services__container container grid ">
-        <!--==================== SERVICES 1 ====================-->  
-        <div class="services__content">
-            <div>
-                <i class="uil uil-analytics skills__icon"></i>
-                <h3 class="services__title">Data Analytics & Visualization<br></h3>
-            </div>
-            <span class="button button--flex button--small button--link services__button">
-
-                View more
-                <i class="uil uil-arrow-right button__icon"></i>
-            </span>
-
-            <div class="services__modal">
-                <div class="services__modal-content">
-                    <h4 class="services__modal-title">Data Analyst & Visualization<br></h4>
-                    <i class="uil uil-times services__modal-close"></i>
-
-                    <ul class="services__modal-services grid">
-                        <li class="services__modal-service">
-                            <i class="uil uil-check-circle services__modal-icon"></i>
-                            <p>Exploratory Data Analysis (EDA)</p>
-                        </li>
-
-                        <li class="services__modal-service">
-                            <i class="uil uil-check-circle services__modal-icon"></i>
-                            <p>Data Cleaning & Preprocessing</p>
-                        </li>
-
-                        <li class="services__modal-service">
-                            <i class="uil uil-check-circle services__modal-icon"></i>
-                            <p>Creating Interactive Dashboards (Power BI, Matplotlib).</p>
-                        </li>
-
-                        <li class="services__modal-service">
-                            <i class="uil uil-check-circle services__modal-icon"></i>
-                            <p>Extracting Insights for Business Decision-Making.</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>  
-        
-        <!--==================== SERVICES 2 ====================--> 
-        <div class="services__content">
-            <div>
-                <i class="uil uil-money-bill skills__icon"></i>
-                <h3 class="services__title">Machine Learning & Predictive Modeling<br> </h3>
-            </div>
-            <span class="button button--flex button--small button--link services__button">
-
-                View more
-                <i class="uil uil-arrow-right button__icon"></i>
-            </span>
-
-            <div class="services__modal">
-                <div class="services__modal-content">
-                    <h4 class="services__modal-title">Machine Learning & Predictive Modeling<br></h4>
-                    <i class="uil uil-times services__modal-close"></i>
-
-                    <ul class="services__modal-services grid">
-                        <li class="services__modal-service">
-                            <i class="uil uil-check-circle services__modal-icon"></i>
-                            <p>Building ML Models (Regression, Classification, Clustering).</p>
-                        </li>
-
-                        <li class="services__modal-service">
-                            <i class="uil uil-check-circle services__modal-icon"></i>
-                            <p>Model Optimization & Hyperparameter Tuning.</p>
-                        </li>
-
-                        <li class="services__modal-service">
-                            <i class="uil uil-check-circle services__modal-icon"></i>
-                            <p>Feature Engineering & Selection.</p>
-                        </li>
-
-                        <li class="services__modal-service">
-                            <i class="uil uil-check-circle services__modal-icon"></i>
-                            <p>Deployment of ML Models (Flask, Streamlit).</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>  
-       
-        <!--==================== SERVICES 3 ====================-->
-        <div class="services__content">
-            <div>
-                <i class="uil uil-arrow services__icon"></i>
-                <h3 class="services__title">Database Management & Backend Development<br></h3>
-            </div>
-            <span class="button button--flex button--small button--link services__button">
-                View more
-                <i class="uil uil-arrow-right button__icon"></i>
-            </span>
-
-            <div class="services__modal">
-                <div class="services__modal-content">
-                    <h4 class="services__modal-title">Database Management & Backend Development<br></h4>
-                    <i class="uil uil-times services__modal-close"></i>
-
-                    <ul class="services__modal-services grid">
-                        <li class="services__modal-service">
-                            <i class="uil uil-check-circle services__modal-icon"></i>
-                            <p>SQL (MySQL, MongoDB, SQLite) – Query Optimization & Database Design.</p>
-                        </li>
-
-                        <li class="services__modal-service">
-                            <i class="uil uil-check-circle services__modal-icon"></i>
-                            <p>Backend Development with Flask/Django.</p>
-                        </li>
-
-                        <li class="services__modal-service">
-                            <i class="uil uil-check-circle services__modal-icon"></i>
-                            <p>API Development & Integration.</p>
-                        </li>
-
-                        <li class="services__modal-service">
-                            <i class="uil uil-check-circle services__modal-icon"></i>
-                            <p>Full-Stack Web Development (HTML, CSS, JavaScript, Flask).</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div> 
-  
-       
-        </div>
-        </section>
-        <!--==================== PROJECTS ====================-->
-            
-
-        <section class="portfolio section" id="projects">
-    <h2 class="section__title">Projects</h2>
-    <span class="section__subtitle">Recent Work</span>
-
-            
-
-    <div class="portfolio__container container swiper-container">
-        <div class="swiper-wrapper">
-            <div class="portfolio__content grid swiper-slide">
-                <img src="./packages/images/personal_bot.png" alt="" class="portfolio__img">
-                <div class="portfolio_">
-                    <h3 class="portfolio__title">Personal Bot</h3>
-                    <p class="portfolio__description">
-                        My Personal SLM Assistant that helps me with: writing cold emails, drafting LinkedIn DMs, creating LinkedIn posts, generating resume-based answers for interviews and applications.
-                    </p>
-                    <a href="https://github.com/Aarathi1535/SLM-Personal-Bot" class="button button--flex button--small portfolio__button">
-                        Demo
-                        <i class="uil uil-arrow-right button__icon"></i>
-                    </a>
-                </div>
-            </div>
-
-            
-            <div class="portfolio__content grid swiper-slide">
-                <img src="./packages/images/trustrank.png" alt="" class="portfolio__img">
-                <div class="portfolio_">
-                    <h3 class="portfolio__title">TrustRank-Algorithm</h3>
-                    <p class="portfolio__description">
-                       Created a trust-aware review ranking algorithm leveraging NLP, helpfulness, and time decay, outperforming traditional methods with a 0.93 Spearman correlation to ground truth rankings.
-                    </p>
-                    <a href="https://trustrank-algorithm.streamlit.app/" class="button button--flex button--small portfolio__button">
-                        Demo
-                        <i class="uil uil-arrow-right button__icon"></i>
-                    </a>
-                </div>
-            </div>
-
-
-             <div class="portfolio__content grid swiper-slide">
-                <img src="./packages/images/digital_forensics.png" alt="" class="portfolio__img">
-                <div class="portfolio_">
-                    <h3 class="portfolio__title">ForgeryNet</h3>
-                    <p class="portfolio__description">
-                         A smart, Django-powered web application that detects forged or tampered documents using a ResNet-based deep learning model.
-                        It combines image processing, optical character recognition (OCR), and convolutional neural networks (CNNs) to analyze scanned documents for visual and textual inconsistencies.
-                    </p>
-                    <a href="https://youtu.be/VSWOx2hTGB4" class="button button--flex button--small portfolio__button">
-                        Demo
-                        <i class="uil uil-arrow-right button__icon"></i>
-                    </a>
-                </div>
-             </div>
-            <!--==================== PROJECT 1 ====================-->
-            <div class="portfolio__content grid swiper-slide">
-                <img src="./packages/images/cropxpert.png" alt="" class="portfolio__img">
-                <div class="portfolio_">
-                    <h3 class="portfolio__title">CropXpert</h3>
-                    <p class="portfolio__description">
-                        A full-stack web app using Machine Learning (Decision Tree, Random Forest) for crop and fertilizer recommendations. 
-                        Integrated pest detection using ResNet, achieving 93.5% accuracy.
-                    </p>
-                    <a href="https://www.youtube.com/watch?v=c43HSkkh4GY" class="button button--flex button--small portfolio__button">
-                        Demo
-                        <i class="uil uil-arrow-right button__icon"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!--==================== PROJECT 2 ====================-->
-            <div class="portfolio__content grid swiper-slide">
-                <img src="./packages/images/chatbot.png" alt="" class="portfolio__img">
-                <div class="portfolio_">
-                    <h3 class="portfolio__title">AI Chatbot for Grievance Redressal</h3>
-                    <p class="portfolio__description">
-                        Developed a chatbot using Python and AI for automated grievance lodging and tracking with flowchart-based logic.
-                    </p>
-                    <a href="https://app.engati.com/static/standalone/standalone.html?bot_key=7984c1d4deac42ec&env=p" class="button button--flex button--small portfolio__button">
-                        Demo
-                        <i class="uil uil-arrow-right button__icon"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!--==================== PROJECT 3 ====================-->
-            <div class="portfolio__content grid swiper-slide">
-                <img src="./packages/images/admission_predictor.png" alt="" class="portfolio__img">
-                <div class="portfolio_">
-                    <h3 class="portfolio__title">Graduation Admission Predictor</h3>
-                    <p class="portfolio__description">
-                        Built a predictive analytics tool using Power BI and Machine Learning to forecast student admissions based on historical data.
-                    </p>
-                    <a href="https://github.com/Aarathi1535/Graduate-Admission" class="button button--flex button--small portfolio__button">
-                        Demo
-                        <i class="uil uil-arrow-right button__icon"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!--==================== PROJECT 4 ====================-->
-            <div class="portfolio__content grid swiper-slide">
-                <img src="./packages/images/hotstar_dashboard.png" alt="" class="portfolio__img">
-                <div class="portfolio_">
-                    <h3 class="portfolio__title">Disney+ Hotstar Dashboard</h3>
-                    <p class="portfolio__description">
-                        Created an interactive dashboard displaying real-time statistics for Disney+ Hotstar user analytics.
-                    </p>
-                    <a href="https://github.com/Aarathi1535/Disney-Hotsar-Data-Analysis-" class="button button--flex button--small portfolio__button">
-                        Demo
-                        <i class="uil uil-arrow-right button__icon"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!--==================== PROJECT 5 ====================-->
-            <div class="portfolio__content grid swiper-slide">
-                <img src="./packages/images/spam_detection.png" alt="" class="portfolio__img">
-                <div class="portfolio_">
-                    <h3 class="portfolio__title">Email Spam Detection</h3>
-                    <p class="portfolio__description">
-                        Developed an ML-based email spam detection system using NLP and classification algorithms.
-                    </p>
-                    <a href="https://emailspamdetection-byaarathi1535.streamlit.app/" class="button button--flex button--small portfolio__button">
-                        Demo
-                        <i class="uil uil-arrow-right button__icon"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!--==================== PROJECT 6 ====================-->
-            <div class="portfolio__content grid swiper-slide">
-                <img src="./packages/images/plagiarism_detector.png" alt="" class="portfolio__img">
-                <div class="portfolio_">
-                    <h3 class="portfolio__title">Plagiarism Detector</h3>
-                    <p class="portfolio__description">
-                        Built a plagiarism detection tool that analyzes text similarity using NLP and deep learning techniques.
-                    </p>
-                    <a href="https://plagarismdetector-by-aarathi1535.streamlit.app/" class="button button--flex button--small portfolio__button">
-                        Demo
-                        <i class="uil uil-arrow-right button__icon"></i>
-                    </a>
-                </div>
-            </div>
-         <!--==================== PROJECT 7 ====================-->
-         <div class="portfolio__content grid swiper-slide">
-            <img src="./packages/images/eduevaluator.png" alt="" class="portfolio__img">
-            <div class="portfolio_">
-                <h3 class="portfolio__title">EduEvaluator</h3>
-                <p class="portfolio__description">
-            Engineered an automated subjective answer sheet evaluation system using Gemini 1.5 Pro, Flask, and Machine Learning, achieving 86.5% accuracy. Developed text recognition and scoring models and contributed to a research paper on AI-based grading systems.
-        </p>
-        <a href="https://youtu.be/tSZsixcv9Sw" class="button button--flex button--small portfolio__button">
-            Demo
-            <i class="uil uil-arrow-right button__icon"></i>
-        </a>
-            </div>
-        </div>
-        </div>
-        <!-- Add arrows -->
-        <div class="swiper-button-next">
-            <i class="uil uil-angle-right-b swiper-portfolio-icon"></i>
-        </div>
-
-        <div class="swiper-button-prev">
-            <i class="uil uil-angle-left-b swiper-portfolio-icon"></i>
-        </div>
-
-        <!-- Add Pagination -->
-        <div class="swiper-pagination"></div>
-    </div>
-            </div>
-            
-</section>
-
-
-        <!--==================== PROJECT IN MIND ====================-->
-        <section class="project section">
-
-            <div class="project__bg">
-                <div class="project__container container grid">
-                    <div class="project__data">
-                        <h2 class="project__title">Do you have a new project?</h2>
-                        <p class="project__description">Contact me now and get discounts on your Python development and Machine Learning projects.</p>
-                        <a href="#contact" class="button button--flex button--white">Contact me
-                            <i class="uil uil-message project__icon button__icon"></i>
-                        </a>
-                       
-                    </div>
-                    <!-- <img src="assets/img/project.png" alt="" class="project__img"> -->
-                </div>
-            </div>
-
-        </section>
-
-        <!--==================== ACHIEVEMENTS ====================-->
-        <section class="testimonial section">
-            <h2 class="section__title">Achievements</h2>
-            <span class="section__subtitle">Notable Accomplishments</span>
-        
-            <div class="achievement-band container">
-                <div class="achievement-track" id="achievement-track">
-                    <article class="achievement-item">
-                        <h3>Rising Star 2026</h3>
-                        <p>Recognized as Rising Star of 2026 under AICTE.</p>
-                    </article>
-                    <article class="achievement-item">
-                        <h3>GATE DA AIR 2412</h3>
-                        <p>Secured AIR 2412 in GATE DA (Top 3%).</p>
-                    </article>
-                    <article class="achievement-item">
-                        <h3>Blog Contributor - AI</h3>
-                        <p>In Plain English: write accessible and engaging AI articles.</p>
-                    </article>
-                    <article class="achievement-item">
-                        <h3>Research Paper Publication</h3>
-                        <p>Published at IEEE PuneCon 2024 on automated subjective answer evaluation.</p>
-                    </article>
-                    <article class="achievement-item">
-                        <h3>Campus Mantri</h3>
-                        <p>GeeksforGeeks: organized coding events and workshops.</p>
-                    </article>
-                    <article class="achievement-item">
-                        <h3>Student Volunteer</h3>
-                        <p>Society for Data Science: supported research, workshops, and events.</p>
-                    </article>
-                    <article class="achievement-item">
-                        <h3>Competitive Coding Conclave</h3>
-                        <p>Summer School IITM: advanced algorithmic problem-solving experience.</p>
-                    </article>
-                    <article class="achievement-item">
-                        <h3>Python & AWS AI Deployment</h3>
-                        <p>Completed Brainovision workshops on Python and AWS AI deployment.</p>
-                    </article>
-                    <article class="achievement-item">
-                        <h3>Open Source Contributor</h3>
-                        <p>Contributed in Hacktoberfest 2024 and GirlScript Summer of Code.</p>
-                    </article>
-                    <article class="achievement-item">
-                        <h3>Internshala Student Partner</h3>
-                        <p>Promoted internship and learning opportunities among students.</p>
-                    </article>
-                    <article class="achievement-item">
-                        <h3>Fundraiser</h3>
-                        <p>Raised funds for Muskurahat Foundation for education initiatives.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-        
-
-        <!--==================== CONTACT ME ====================-->
-        <section class="contact section" id="contact">
-            <h2 class="section__title">Contact me</h2>
-            <span class="section__subtitle">Get in touch</span>
-
-            <div class="contact__container container grid">
-                <div>
-                    <div class="contact__information">
-                        <i class="uil uil-phone-alt contact__icon"></i>
-
+                <div class="publications__grid">
+                    
+                    <!-- Paper 1: IJSRET 2026 -->
+                    <div class="pub-card glass-card featured">
                         <div>
-                            <h3 class="contact__title">Call me</h3>
-                            <span class="contatc__subtitle">(+91) 9381481266</span>
+                            <div class="pub__meta">
+                                <span class="pub__venue-chip"><i class="uil uil-award"></i> IJSRET Journal 2026</span>
+                                <span class="pub__year">Vol. 12, Issue 2 | ISSN: 2395-566X</span>
+                            </div>
+                            <h3 class="pub__title">An Intelligent Machine Learning Framework for Detecting QUIC-Based Traffic Flood Attacks in Encrypted HTTP/3 Networks</h3>
+                            <p class="pub__desc">
+                                Proposed an intelligent machine learning & Explainable AI (XAI) framework for detecting QUIC-based DDoS traffic flood attacks in encrypted HTTP/3 network environments without payload inspection. Evaluated multiple classifiers, with Random Forest achieving <strong>95.8% accuracy</strong> and <strong>0.97 ROC-AUC</strong>, integrated with <strong>SHAP and LIME</strong> for interpretable security insights.
+                            </p>
                         </div>
-                    </div>
-
-                    <div class="contact__information">
-                        <i class="uil uil-envelope contact__icon"></i>
-
                         <div>
-                            <h3 class="contact__title">E-mail</h3>
-                            <span class="contatc__subtitle">aarathisree.1535@gmail.com</span>
+                            <div class="pub__tags">
+                                <span class="tag-pill">QUIC / HTTP/3</span>
+                                <span class="tag-pill">DDoS Detection</span>
+                                <span class="tag-pill">Random Forest (95.8%)</span>
+                                <span class="tag-pill">SHAP & LIME XAI</span>
+                                <span class="tag-pill">Encrypted Traffic Analysis</span>
+                            </div>
+                            <a href="https://github.com/Aarathi1535" target="_blank" class="btn btn-purple btn-sm">
+                                <span>View Research Details</span>
+                                <i class="uil uil-arrow-up-right"></i>
+                            </a>
                         </div>
                     </div>
 
-                    <div class="contact__information">
-                        <i class="uil uil-map-marker contact__icon"></i>
-
+                    <!-- Paper 2: IEEE PuneCon 2024 -->
+                    <div class="pub-card glass-card">
                         <div>
-                            <h3 class="contact__title">Location</h3>
-                            <span class="contatc__subtitle">Andhra Pradesh, India</span>
+                            <div class="pub__meta">
+                                <span class="pub__venue-chip"><i class="uil uil-award"></i> IEEE PuneCon 2024</span>
+                                <span class="pub__year">December 2024</span>
+                            </div>
+                            <h3 class="pub__title">Revolutionizing the Future of Automated Subjective Answer Sheet Evaluation System with Machine Learning and LLMs</h3>
+                            <p class="pub__desc">
+                                Engineered an end-to-end automated subjective answer sheet evaluation pipeline integrating Gemini 1.5 Pro, Computer Vision, and OCR. Achieved an <strong>86.5% grading accuracy</strong> with automated rubric scoring and personalized feedback generation for institutions.
+                            </p>
+                        </div>
+                        <div>
+                            <div class="pub__tags">
+                                <span class="tag-pill">Large Language Models (LLMs)</span>
+                                <span class="tag-pill">OCR & Computer Vision</span>
+                                <span class="tag-pill">Automated Grading</span>
+                                <span class="tag-pill">Flask API</span>
+                            </div>
+                            <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                                <a href="https://github.com/Aarathi1535/Edu-Evaluator" target="_blank" class="btn btn-secondary btn-sm">
+                                    <i class="uil uil-github"></i>
+                                    <span>GitHub Repo</span>
+                                </a>
+                                <a href="https://youtu.be/tSZsixcv9Sw" target="_blank" class="btn btn-primary btn-sm">
+                                    <i class="uil uil-play"></i>
+                                    <span>Video Demo</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ==================== EXPERIENCE & EDUCATION TIMELINE ==================== -->
+        <section class="section" id="experience">
+            <div class="container">
+                <div class="section__header">
+                    <span class="section__tag"><i class="uil uil-briefcase-alt"></i> Career & Journey</span>
+                    <h2 class="section__title">Work Experience & Education</h2>
+                    <p class="section__subtitle">A chronological journey through research fellowships, startup leadership, software internships, and academic training.</p>
                 </div>
 
-                <form action="" class="contact__form grid">
-                    <div class="contact__inputs grid">
-                        <div class="contact__content">
-                            <label for="" class="contact__label">Name</label>
-                            <input type="text" class="contact__input">
+                <div class="timeline-tabs">
+                    <button class="timeline-tab-btn active" data-target="timeline-work">
+                        <i class="uil uil-briefcase-alt"></i>
+                        <span>Work Experience</span>
+                    </button>
+                    <button class="timeline-tab-btn" data-target="timeline-education">
+                        <i class="uil uil-graduation-cap"></i>
+                        <span>Education</span>
+                    </button>
+                </div>
+
+                <!-- Timeline: Work Experience -->
+                <div class="timeline-pane active" id="timeline-work">
+                    
+                    <!-- 1. Research Fellow -->
+                    <div class="timeline-item">
+                        <div class="timeline-node"></div>
+                        <div class="timeline-card glass-card">
+                            <div class="timeline-header">
+                                <div>
+                                    <h3 class="timeline-role">Research Fellow</h3>
+                                    <span class="timeline-company">CVIT, IIIT Hyderabad (under Prof. C. V. Jawahar)</span>
+                                </div>
+                                <span class="timeline-badge">July 2026 – Present</span>
+                            </div>
+                            <ul class="timeline-bullets">
+                                <li><strong>Exam Evaluation Platform</strong>: Architected a role-based digital exam evaluation system for managing exam scripts and streamlining TA-assisted grading.</li>
+                                <li>Integrated an interactive grading canvas with real-time annotations, comprehensive audit trails, and secure immutable storage.</li>
+                                <li>Engineered scalable cloud backend deployment pipelines under the guidance of Prof. C. V. Jawahar at CVIT.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 2. Freelancer @ Aarshiv -->
+                    <div class="timeline-item">
+                        <div class="timeline-node"></div>
+                        <div class="timeline-card glass-card">
+                            <div class="timeline-header">
+                                <div>
+                                    <h3 class="timeline-role">Freelancer / AI Engineer</h3>
+                                    <span class="timeline-company"><a href="https://aarshivai.netlify.app/" target="_blank" style="color: var(--accent-emerald); text-decoration: underline; text-underline-offset: 3px;">Aarshiv (aarshivai.netlify.app)</a></span>
+                                </div>
+                                <span class="timeline-badge">March 2026 – June 2026</span>
+                            </div>
+                            <div class="timeline-calendar">
+                                <i class="uil uil-globe"></i> Remote &bull; <a href="https://aarshivai.netlify.app/" target="_blank" style="color: var(--accent-cyan);"><i class="uil uil-external-link-alt"></i> Live Site</a>
+                            </div>
+                            <ul class="timeline-bullets">
+                                <li>Built and deployed web platforms for multiple business clients, delivering products used by <strong>1000+ active users</strong>.</li>
+                                <li>Developed a high-speed data scraping engine generating <strong>100+ verified leads in 5 minutes</strong>.</li>
+                                <li>Created an AI evaluator with detailed feedback for an MBBS coaching institute with <strong>98% accuracy</strong>.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 3. Data Analyst Intern @ Unstop -->
+                    <div class="timeline-item">
+                        <div class="timeline-node"></div>
+                        <div class="timeline-card glass-card">
+                            <div class="timeline-header">
+                                <div>
+                                    <h3 class="timeline-role">Data Analyst Intern</h3>
+                                    <span class="timeline-company">Unstop</span>
+                                </div>
+                                <span class="timeline-badge">Dec 2025 – Feb 2026</span>
+                            </div>
+                            <div class="timeline-calendar">
+                                <i class="uil uil-globe"></i> Remote
+                            </div>
+                            <ul class="timeline-bullets">
+                                <li>Built automated SQL dashboards for KPI tracking and data reporting.</li>
+                                <li>Extracted and generated actionable insights for executive business decision-making.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 4. Tech Lead Intern & App Developer @ SnapGro -->
+                    <div class="timeline-item">
+                        <div class="timeline-node"></div>
+                        <div class="timeline-card glass-card">
+                            <div class="timeline-header">
+                                <div>
+                                    <h3 class="timeline-role">Tech Lead Intern & App Developer Intern</h3>
+                                    <span class="timeline-company">SnapGro</span>
+                                </div>
+                                <span class="timeline-badge">July 2025 – Oct 2025</span>
+                            </div>
+                            <div class="timeline-calendar">
+                                <i class="uil uil-globe"></i> Remote
+                            </div>
+                            <ul class="timeline-bullets">
+                                <li>Designed scalable backend system architecture for mobile and web platforms.</li>
+                                <li>Led development and deployment of <strong>5+ core features</strong> across the tech stack.</li>
+                                <li>Optimized backend queries and caching, reducing API response time by <strong>20%</strong>.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 5. Research Intern @ Society for Data Science -->
+                    <div class="timeline-item">
+                        <div class="timeline-node"></div>
+                        <div class="timeline-card glass-card">
+                            <div class="timeline-header">
+                                <div>
+                                    <h3 class="timeline-role">Research & Project Intern</h3>
+                                    <span class="timeline-company">Society for Data Science</span>
+                                </div>
+                                <span class="timeline-badge">April 2024 – Oct 2024</span>
+                            </div>
+                            <div class="timeline-calendar">
+                                <i class="uil uil-map-marker"></i> Pune, India
+                            </div>
+                            <ul class="timeline-bullets">
+                                <li>Built LLM + OCR automated answer grading system achieving <strong>86.5% accuracy</strong>.</li>
+                                <li>Designed end-to-end pipeline resulting in a published research paper at IEEE PuneCon 2024.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 6. Python Developer Intern @ Infosys Springboard -->
+                    <div class="timeline-item">
+                        <div class="timeline-node"></div>
+                        <div class="timeline-card glass-card">
+                            <div class="timeline-header">
+                                <div>
+                                    <h3 class="timeline-role">Python Developer Intern</h3>
+                                    <span class="timeline-company">Infosys Springboard</span>
+                                </div>
+                                <span class="timeline-badge">April 2024 – June 2024</span>
+                            </div>
+                            <div class="timeline-calendar">
+                                <i class="uil uil-globe"></i> Remote
+                            </div>
+                            <ul class="timeline-bullets">
+                                <li>Built automated OCR bank cheque processing system with <strong>85% accuracy</strong>.</li>
+                                <li>Automated SQL data extraction and transformation pipelines for secure banking data handling.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Timeline: Education -->
+                <div class="timeline-pane" id="timeline-education">
+                    
+                    <!-- 1. B.Tech in CSE Data Science -->
+                    <div class="timeline-item">
+                        <div class="timeline-node"></div>
+                        <div class="timeline-card glass-card">
+                            <div class="timeline-header">
+                                <div>
+                                    <h3 class="timeline-role">B.Tech in CSE (Data Science)</h3>
+                                    <span class="timeline-company">Pragati Engineering College</span>
+                                </div>
+                                <span class="timeline-badge" style="background: rgba(16, 185, 129, 0.15); color: var(--accent-emerald);">CGPA: 9.39</span>
+                            </div>
+                            <div class="timeline-calendar">
+                                <i class="uil uil-calendar-alt"></i> 2022 – 2026 | Andhra Pradesh, India
+                            </div>
+                            <p class="timeline-desc" style="font-size: 0.92rem; color: var(--text-secondary);">
+                                Specialized in Data Science, Machine Learning, Deep Learning, and Distributed Systems. Actively maintained a 9.39 CGPA while publishing research and leading campus technical chapters.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 2. Senior Secondary Education -->
+                    <div class="timeline-item">
+                        <div class="timeline-node"></div>
+                        <div class="timeline-card glass-card">
+                            <div class="timeline-header">
+                                <div>
+                                    <h3 class="timeline-role">Senior Secondary Education</h3>
+                                    <span class="timeline-company">Board of Intermediate Education</span>
+                                </div>
+                                <span class="timeline-badge">2020 – 2022</span>
+                            </div>
+                            <div class="timeline-calendar">
+                                <i class="uil uil-map-marker"></i> Andhra Pradesh, India
+                            </div>
+                            <p class="timeline-desc" style="font-size: 0.92rem; color: var(--text-secondary);">
+                                Mathematics, Physics, and Chemistry (MPC) with academic excellence.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 3. Primary and Secondary Schooling -->
+                    <div class="timeline-item">
+                        <div class="timeline-node"></div>
+                        <div class="timeline-card glass-card">
+                            <div class="timeline-header">
+                                <div>
+                                    <h3 class="timeline-role">Primary & Secondary Education</h3>
+                                    <span class="timeline-company">CBSE School</span>
+                                </div>
+                                <span class="timeline-badge">2008 – 2020</span>
+                            </div>
+                            <div class="timeline-calendar">
+                                <i class="uil uil-map-marker"></i> Al Jubail, Kingdom of Saudi Arabia
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ==================== FILTERABLE PROJECTS SECTION ==================== -->
+        <section class="section" id="projects">
+            <div class="container">
+                <div class="section__header">
+                    <span class="section__tag"><i class="uil uil-layer-group"></i> Portfolio</span>
+                    <h2 class="section__title">Featured Projects & Systems</h2>
+                    <p class="section__subtitle">Intelligent AI applications, computer vision tools, cybersecurity models, and data analytics dashboards.</p>
+                </div>
+
+                <!-- Filter Bar -->
+                <div class="projects__filter-bar">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="ai-ml">AI & ML</button>
+                    <button class="filter-btn" data-filter="vision-ocr">Vision & OCR</button>
+                    <button class="filter-btn" data-filter="cyber-network">Cyber & Networks</button>
+                    <button class="filter-btn" data-filter="fullstack">Full-Stack & Analytics</button>
+                </div>
+
+                <!-- Project Grid -->
+                <div class="projects__grid">
+                    
+                    <!-- 1. EduEvaluator -->
+                    <div class="project-card glass-card" data-category="ai-ml vision-ocr">
+                        <div class="project__img-wrapper">
+                            <img src="./packages/images/eduevaluator.png" alt="EduEvaluator">
+                            <span class="project__category-badge">LLMs & Vision</span>
+                        </div>
+                        <div class="project__content">
+                            <div>
+                                <h3 class="project__title">EduEvaluator — Automated Grading</h3>
+                                <p class="project__desc">
+                                    AI-powered subjective answer evaluation system using Gemini 1.5 Pro, OCR, and ML achieving 86.5% accuracy. Published in IEEE PuneCon 2024.
+                                </p>
+                                <div class="project__tech-tags">
+                                    <span class="tag-pill">Gemini 1.5 Pro</span>
+                                    <span class="tag-pill">OCR</span>
+                                    <span class="tag-pill">Flask</span>
+                                    <span class="tag-pill">Python</span>
+                                </div>
+                            </div>
+                            <div class="project__actions">
+                                <a href="https://github.com/Aarathi1535/Edu-Evaluator" target="_blank" class="btn btn-secondary btn-sm"><i class="uil uil-github"></i> Code</a>
+                                <a href="https://youtu.be/tSZsixcv9Sw" target="_blank" class="btn btn-primary btn-sm"><i class="uil uil-play"></i> Demo</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. TrustRank Algorithm -->
+                    <div class="project-card glass-card" data-category="ai-ml fullstack">
+                        <div class="project__img-wrapper">
+                            <img src="./packages/images/trustrank.png" alt="TrustRank Algorithm">
+                            <span class="project__category-badge">NLP & Ranking</span>
+                        </div>
+                        <div class="project__content">
+                            <div>
+                                <h3 class="project__title">TrustRank Review Algorithm</h3>
+                                <p class="project__desc">
+                                    Trust-aware review ranking algorithm leveraging NLP, review helpfulness, and time decay with a 0.93 Spearman correlation to ground truth rankings.
+                                </p>
+                                <div class="project__tech-tags">
+                                    <span class="tag-pill">NLP</span>
+                                    <span class="tag-pill">Streamlit</span>
+                                    <span class="tag-pill">Python</span>
+                                    <span class="tag-pill">Algorithms</span>
+                                </div>
+                            </div>
+                            <div class="project__actions">
+                                <a href="https://trustrank-algorithm.streamlit.app/" target="_blank" class="btn btn-primary btn-sm"><i class="uil uil-arrow-up-right"></i> Live App</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. ForgeryNet -->
+                    <div class="project-card glass-card" data-category="vision-ocr ai-ml">
+                        <div class="project__img-wrapper">
+                            <img src="./packages/images/digital_forensics.png" alt="ForgeryNet">
+                            <span class="project__category-badge">Computer Vision</span>
+                        </div>
+                        <div class="project__content">
+                            <div>
+                                <h3 class="project__title">ForgeryNet — Document Verification</h3>
+                                <p class="project__desc">
+                                    Django web application detecting forged or tampered scanned documents using ResNet deep learning, OCR, and CNN inconsistent text detection.
+                                </p>
+                                <div class="project__tech-tags">
+                                    <span class="tag-pill">ResNet CNN</span>
+                                    <span class="tag-pill">OCR</span>
+                                    <span class="tag-pill">Django</span>
+                                    <span class="tag-pill">OpenCV</span>
+                                </div>
+                            </div>
+                            <div class="project__actions">
+                                <a href="https://youtu.be/VSWOx2hTGB4" target="_blank" class="btn btn-primary btn-sm"><i class="uil uil-play"></i> Video Demo</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. Personal Bot -->
+                    <div class="project-card glass-card" data-category="ai-ml">
+                        <div class="project__img-wrapper">
+                            <img src="./packages/images/personal_bot.png" alt="Personal SLM Bot">
+                            <span class="project__category-badge">SLM & GenAI</span>
+                        </div>
+                        <div class="project__content">
+                            <div>
+                                <h3 class="project__title">Personal SLM Assistant</h3>
+                                <p class="project__desc">
+                                    Custom SLM agent assisting in drafting personalized cold emails, LinkedIn content generation, and tailored interview response synthesis.
+                                </p>
+                                <div class="project__tech-tags">
+                                    <span class="tag-pill">SLMs</span>
+                                    <span class="tag-pill">Prompt Eng</span>
+                                    <span class="tag-pill">Python</span>
+                                    <span class="tag-pill">GenAI</span>
+                                </div>
+                            </div>
+                            <div class="project__actions">
+                                <a href="https://github.com/Aarathi1535/SLM-Personal-Bot" target="_blank" class="btn btn-secondary btn-sm"><i class="uil uil-github"></i> Code</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5. CropXpert -->
+                    <div class="project-card glass-card" data-category="ai-ml vision-ocr fullstack">
+                        <div class="project__img-wrapper">
+                            <img src="./packages/images/cropxpert.png" alt="CropXpert">
+                            <span class="project__category-badge">ML & Vision</span>
+                        </div>
+                        <div class="project__content">
+                            <div>
+                                <h3 class="project__title">CropXpert — AI Agriculture</h3>
+                                <p class="project__desc">
+                                    End-to-end web system for crop and fertilizer recommendation with ResNet pest image classification achieving 93.5% accuracy.
+                                </p>
+                                <div class="project__tech-tags">
+                                    <span class="tag-pill">Decision Trees</span>
+                                    <span class="tag-pill">ResNet</span>
+                                    <span class="tag-pill">Flask</span>
+                                    <span class="tag-pill">MySQL</span>
+                                </div>
+                            </div>
+                            <div class="project__actions">
+                                <a href="https://www.youtube.com/watch?v=c43HSkkh4GY" target="_blank" class="btn btn-primary btn-sm"><i class="uil uil-play"></i> Demo</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6. AI Chatbot for Grievance Redressal -->
+                    <div class="project-card glass-card" data-category="ai-ml fullstack">
+                        <div class="project__img-wrapper">
+                            <img src="./packages/images/chatbot.png" alt="Grievance AI Chatbot">
+                            <span class="project__category-badge">Conversational AI</span>
+                        </div>
+                        <div class="project__content">
+                            <div>
+                                <h3 class="project__title">Grievance AI Chatbot</h3>
+                                <p class="project__desc">
+                                    Automated grievance lodging and real-time resolution tracking bot with dynamic flowchart logic and backend logging.
+                                </p>
+                                <div class="project__tech-tags">
+                                    <span class="tag-pill">Python</span>
+                                    <span class="tag-pill">Conversational AI</span>
+                                    <span class="tag-pill">API Integration</span>
+                                </div>
+                            </div>
+                            <div class="project__actions">
+                                <a href="https://app.engati.com/static/standalone/standalone.html?bot_key=7984c1d4deac42ec&env=p" target="_blank" class="btn btn-primary btn-sm"><i class="uil uil-arrow-up-right"></i> Live Bot</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 7. Graduation Admission Predictor -->
+                    <div class="project-card glass-card" data-category="ai-ml fullstack">
+                        <div class="project__img-wrapper">
+                            <img src="./packages/images/admission_predictor.png" alt="Admission Predictor">
+                            <span class="project__category-badge">Predictive Analytics</span>
+                        </div>
+                        <div class="project__content">
+                            <div>
+                                <h3 class="project__title">Graduate Admission Predictor</h3>
+                                <p class="project__desc">
+                                    Interactive predictive model in Power BI and Streamlit forecasting university admission probability from multi-factor historical profiles.
+                                </p>
+                                <div class="project__tech-tags">
+                                    <span class="tag-pill">Scikit-Learn</span>
+                                    <span class="tag-pill">Streamlit</span>
+                                    <span class="tag-pill">Power BI</span>
+                                </div>
+                            </div>
+                            <div class="project__actions">
+                                <a href="https://github.com/Aarathi1535/Graduate-Admission" target="_blank" class="btn btn-secondary btn-sm"><i class="uil uil-github"></i> Code</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 8. Disney+ Hotstar Dashboard -->
+                    <div class="project-card glass-card" data-category="fullstack">
+                        <div class="project__img-wrapper">
+                            <img src="./packages/images/hotstar_dashboard.png" alt="Hotstar Dashboard">
+                            <span class="project__category-badge">Data Analytics</span>
+                        </div>
+                        <div class="project__content">
+                            <div>
+                                <h3 class="project__title">Hotstar Analytics Dashboard</h3>
+                                <p class="project__desc">
+                                    Comprehensive interactive analytics dashboard visualizing content distribution, user viewership trends, and rating metrics.
+                                </p>
+                                <div class="project__tech-tags">
+                                    <span class="tag-pill">Power BI</span>
+                                    <span class="tag-pill">Python</span>
+                                    <span class="tag-pill">EDA</span>
+                                </div>
+                            </div>
+                            <div class="project__actions">
+                                <a href="https://github.com/Aarathi1535/Disney-Hotsar-Data-Analysis-" target="_blank" class="btn btn-secondary btn-sm"><i class="uil uil-github"></i> Code</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 9. Email Spam Detection -->
+                    <div class="project-card glass-card" data-category="ai-ml cyber-network">
+                        <div class="project__img-wrapper">
+                            <img src="./packages/images/spam_detection.png" alt="Spam Detection">
+                            <span class="project__category-badge">Cybersecurity & NLP</span>
+                        </div>
+                        <div class="project__content">
+                            <div>
+                                <h3 class="project__title">Email Spam Classifier</h3>
+                                <p class="project__desc">
+                                    NLP text classification application detecting phishing and spam messages with high precision and low false-positive rate.
+                                </p>
+                                <div class="project__tech-tags">
+                                    <span class="tag-pill">NLP</span>
+                                    <span class="tag-pill">Naive Bayes</span>
+                                    <span class="tag-pill">Streamlit</span>
+                                </div>
+                            </div>
+                            <div class="project__actions">
+                                <a href="https://emailspamdetection-byaarathi1535.streamlit.app/" target="_blank" class="btn btn-primary btn-sm"><i class="uil uil-arrow-up-right"></i> Live App</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ==================== ENTREPRENEURSHIP & VENTURES SECTION ==================== -->
+        <section class="section" id="entrepreneurship">
+            <div class="container">
+                <div class="section__header">
+                    <span class="section__tag" style="background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.3); color: var(--accent-emerald);">
+                        <i class="uil uil-rocket"></i> Venture & Impact
+                    </span>
+                    <h2 class="section__title">Entrepreneurship: <span class="text-gradient">Aarshiv</span></h2>
+                    <p class="section__subtitle">Building applied AI platforms, high-velocity data extraction engines, and production web systems for commercial clients and end users.</p>
+                </div>
+
+                <!-- Main Venture Hero Card -->
+                <div class="venture-hero-card glass-card">
+                    <div class="venture-hero-header">
+                        <div class="venture-brand">
+                            <div class="venture-logo-icon">
+                                <i class="uil uil-rocket"></i>
+                            </div>
+                            <div class="venture-title-group">
+                                <h3>Aarshiv</h3>
+                                <div class="venture-role-chip">
+                                    <span class="status-dot"></span>
+                                    <span>Founder & Principal AI/Full-Stack Engineer</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                            <span class="venture-date-badge">March 2026 – June 2026</span>
+                            <a href="https://aarshivai.netlify.app/" target="_blank" class="btn btn-primary btn-sm" style="box-shadow: 0 4px 14px rgba(16, 185, 129, 0.4);">
+                                <i class="uil uil-external-link-alt"></i>
+                                <span>Visit Aarshiv AI</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <p class="venture-overview">
+                        Founded <strong><a href="https://aarshivai.netlify.app/" target="_blank" style="color: var(--accent-emerald); text-decoration: underline; text-underline-offset: 3px;">Aarshiv</a></strong> as an independent venture delivering high-impact, custom software engineering and specialized AI solutions. Partnered directly with coaching institutes and enterprise clients to engineer end-to-end web architectures, high-accuracy intelligent grading systems, and automated data extraction pipelines.
+                    </p>
+
+                    <!-- Key Stats Ticker -->
+                    <div class="venture-stats-grid">
+                        <div class="venture-stat-box">
+                            <div class="venture-stat-number text-gradient">1000+</div>
+                            <div class="venture-stat-label">Active Users</div>
+                            <p class="venture-stat-desc">Production platforms engineered and deployed across multiple business clients with reliable uptime.</p>
                         </div>
 
-                        <div class="contact__content">
-                            <label for="" class="contact__label">E-mail</label>
-                            <input type="email" class="contact__input">
+                        <div class="venture-stat-box">
+                            <div class="venture-stat-number text-gradient-cyan">100+ Leads</div>
+                            <div class="venture-stat-label">In Under 5 Minutes</div>
+                            <p class="venture-stat-desc">High-throughput automated data scraping and lead generation engine with proxy rotation.</p>
+                        </div>
+
+                        <div class="venture-stat-box">
+                            <div class="venture-stat-number" style="color: var(--accent-amber);">98% Acc</div>
+                            <div class="venture-stat-label">MBBS AI Evaluation</div>
+                            <p class="venture-stat-desc">Custom criteria-based subjective answer evaluator providing comprehensive rubric feedback.</p>
                         </div>
                     </div>
 
-                    <div class="contact__content">
-                        <label for="" class="contact__label">Subject</label>
-                        <input type="text" class="contact__input">
+                    <!-- Products / Deliverables Grid -->
+                    <div class="venture-products-grid">
+                        
+                        <!-- Product 1 -->
+                        <div class="venture-product-card glass-card">
+                            <div>
+                                <span class="venture-product-tag">Medical Education AI</span>
+                                <h4 class="venture-product-title">MBBS AI Answer Evaluator</h4>
+                                <p class="venture-product-desc">
+                                    Engineered a custom automated evaluation pipeline for a medical coaching institute. Evaluates student descriptive anatomy and clinical theory answers against strict academic rubrics with <strong>98% accuracy</strong>, generating detailed constructive feedback.
+                                </p>
+                            </div>
+                            <div class="pub__tags" style="margin-bottom: 0;">
+                                <span class="tag-pill">LLM Prompt Engine</span>
+                                <span class="tag-pill">Rubric Parsing</span>
+                                <span class="tag-pill">Detailed Feedback API</span>
+                            </div>
+                        </div>
+
+                        <!-- Product 2 -->
+                        <div class="venture-product-card glass-card">
+                            <div>
+                                <span class="venture-product-tag">Data Automation & Scraping</span>
+                                <h4 class="venture-product-title">High-Velocity Lead Engine</h4>
+                                <p class="venture-product-desc">
+                                    Architected an autonomous web scraping and verification engine capable of mining, filtering, and validating <strong>100+ verified business leads in under 5 minutes</strong> with anti-detection headers, deduplication, and export pipelines.
+                                </p>
+                            </div>
+                            <div class="pub__tags" style="margin-bottom: 0;">
+                                <span class="tag-pill">Python</span>
+                                <span class="tag-pill">Async Scraping</span>
+                                <span class="tag-pill">Data Pipelines</span>
+                            </div>
+                        </div>
+
+                        <!-- Product 3 -->
+                        <div class="venture-product-card glass-card">
+                            <div>
+                                <span class="venture-product-tag">Full-Stack SaaS Architecture</span>
+                                <h4 class="venture-product-title">Client Web Platforms</h4>
+                                <p class="venture-product-desc">
+                                    Designed, built, and launched responsive, full-stack client web applications serving over <strong>1,000+ active end-users</strong>. Implemented secure role-based access, fast database queries, and frictionless user flows.
+                                </p>
+                            </div>
+                            <div class="pub__tags" style="margin-bottom: 0;">
+                                <span class="tag-pill">Full-Stack Dev</span>
+                                <span class="tag-pill">Scalable Backend</span>
+                                <span class="tag-pill">Cloud Deployment</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ==================== SKILLS MATRIX SECTION ==================== -->
+        <section class="section" id="skills">
+            <div class="container">
+                <div class="section__header">
+                    <span class="section__tag"><i class="uil uil-brain"></i> Competencies</span>
+                    <h2 class="section__title">Technical Proficiency & Stack</h2>
+                    <p class="section__subtitle">Comprehensive breakdown of programming languages, machine learning frameworks, databases, and core computer science foundations.</p>
+                </div>
+
+                <div class="skills-matrix">
+                    
+                    <!-- Category 1: AI & Data Science -->
+                    <div class="skill-category-card glass-card">
+                        <div class="skill-category-header">
+                            <i class="uil uil-brain skill-category-icon"></i>
+                            <div>
+                                <h3 style="font-size: 1.15rem;">AI, ML & Computer Vision</h3>
+                                <p style="font-size: 0.8rem; color: var(--text-muted);">Deep Learning, LLMs, Vision & XAI</p>
+                            </div>
+                        </div>
+
+                        <div class="skill-meter-list">
+                            <div class="skill-meter-item">
+                                <div class="skill-label-group">
+                                    <span class="skill-name">Machine Learning & Scikit-Learn</span>
+                                    <span class="skill-percent">95%</span>
+                                </div>
+                                <div class="skill-track"><div class="skill-bar" style="width: 95%;"></div></div>
+                            </div>
+                            <div class="skill-meter-item">
+                                <div class="skill-label-group">
+                                    <span class="skill-name">LLMs & Prompt Engineering</span>
+                                    <span class="skill-percent">90%</span>
+                                </div>
+                                <div class="skill-track"><div class="skill-bar" style="width: 90%;"></div></div>
+                            </div>
+                            <div class="skill-meter-item">
+                                <div class="skill-label-group">
+                                    <span class="skill-name">OCR & Computer Vision (OpenCV)</span>
+                                    <span class="skill-percent">88%</span>
+                                </div>
+                                <div class="skill-track"><div class="skill-bar" style="width: 88%;"></div></div>
+                            </div>
+                            <div class="skill-meter-item">
+                                <div class="skill-label-group">
+                                    <span class="skill-name">Pandas, NumPy & PyData Stack</span>
+                                    <span class="skill-percent">92%</span>
+                                </div>
+                                <div class="skill-track"><div class="skill-bar" style="width: 92%;"></div></div>
+                            </div>
+                            <div class="skill-meter-item">
+                                <div class="skill-label-group">
+                                    <span class="skill-name">Explainable AI (SHAP & LIME)</span>
+                                    <span class="skill-percent">85%</span>
+                                </div>
+                                <div class="skill-track"><div class="skill-bar" style="width: 85%;"></div></div>
+                            </div>
+                            <div class="skill-meter-item">
+                                <div class="skill-label-group">
+                                    <span class="skill-name">Power BI & Data Visualization</span>
+                                    <span class="skill-percent">88%</span>
+                                </div>
+                                <div class="skill-track"><div class="skill-bar" style="width: 88%;"></div></div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="contact__content">
-                        <label for="" class="contact__label">Description</label>
-                        <textarea name="" id="" cols="0" rows="7" class="contact__input"></textarea>
+                    <!-- Category 2: Backend & Systems -->
+                    <div class="skill-category-card glass-card">
+                        <div class="skill-category-header">
+                            <i class="uil uil-server-network skill-category-icon" style="color: var(--accent-violet);"></i>
+                            <div>
+                                <h3 style="font-size: 1.15rem;">Backend & Architecture</h3>
+                                <p style="font-size: 0.8rem; color: var(--text-muted);">Languages, Databases & APIs</p>
+                            </div>
+                        </div>
+
+                        <div class="skill-meter-list">
+                            <div class="skill-meter-item">
+                                <div class="skill-label-group">
+                                    <span class="skill-name">Python (Advanced)</span>
+                                    <span class="skill-percent">95%</span>
+                                </div>
+                                <div class="skill-track"><div class="skill-bar" style="width: 95%; background: var(--gradient-purple);"></div></div>
+                            </div>
+                            <div class="skill-meter-item">
+                                <div class="skill-label-group">
+                                    <span class="skill-name">SQL (MySQL, SQLite, Query Tuning)</span>
+                                    <span class="skill-percent">90%</span>
+                                </div>
+                                <div class="skill-track"><div class="skill-bar" style="width: 90%; background: var(--gradient-purple);"></div></div>
+                            </div>
+                            <div class="skill-meter-item">
+                                <div class="skill-label-group">
+                                    <span class="skill-name">MongoDB (NoSQL Document Store)</span>
+                                    <span class="skill-percent">82%</span>
+                                </div>
+                                <div class="skill-track"><div class="skill-bar" style="width: 82%; background: var(--gradient-purple);"></div></div>
+                            </div>
+                            <div class="skill-meter-item">
+                                <div class="skill-label-group">
+                                    <span class="skill-name">Flask & Django (REST APIs)</span>
+                                    <span class="skill-percent">88%</span>
+                                </div>
+                                <div class="skill-track"><div class="skill-bar" style="width: 88%; background: var(--gradient-purple);"></div></div>
+                            </div>
+                            <div class="skill-meter-item">
+                                <div class="skill-label-group">
+                                    <span class="skill-name">Java & OOP Principles</span>
+                                    <span class="skill-percent">78%</span>
+                                </div>
+                                <div class="skill-track"><div class="skill-bar" style="width: 78%; background: var(--gradient-purple);"></div></div>
+                            </div>
+                            <div class="skill-meter-item">
+                                <div class="skill-label-group">
+                                    <span class="skill-name">Git & CI/CD Workflows</span>
+                                    <span class="skill-percent">88%</span>
+                                </div>
+                                <div class="skill-track"><div class="skill-bar" style="width: 88%; background: var(--gradient-purple);"></div></div>
+                            </div>
+                        </div>
                     </div>
 
+                    <!-- Category 3: Coursework & CS Core -->
+                    <div class="skill-category-card glass-card">
+                        <div class="skill-category-header">
+                            <i class="uil uil-book-reader skill-category-icon" style="color: var(--accent-emerald);"></i>
+                            <div>
+                                <h3 style="font-size: 1.15rem;">CS Fundamentals</h3>
+                                <p style="font-size: 0.8rem; color: var(--text-muted);">Core Academic & Theoretical Mastery</p>
+                            </div>
+                        </div>
+
+                        <div class="skill-meter-list">
+                            <div class="skill-meter-item">
+                                <div class="skill-label-group">
+                                    <span class="skill-name">Data Structures & Algorithms (DSA)</span>
+                                    <span class="skill-percent">88%</span>
+                                </div>
+                                <div class="skill-track"><div class="skill-bar" style="width: 88%; background: linear-gradient(135deg, #10b981, #06b6d4);"></div></div>
+                            </div>
+                            <div class="skill-meter-item">
+                                <div class="skill-label-group">
+                                    <span class="skill-name">Database Management Systems (DBMS)</span>
+                                    <span class="skill-percent">90%</span>
+                                </div>
+                                <div class="skill-track"><div class="skill-bar" style="width: 90%; background: linear-gradient(135deg, #10b981, #06b6d4);"></div></div>
+                            </div>
+                            <div class="skill-meter-item">
+                                <div class="skill-label-group">
+                                    <span class="skill-name">Computer Networks (QUIC/UDP/TCP)</span>
+                                    <span class="skill-percent">85%</span>
+                                </div>
+                                <div class="skill-track"><div class="skill-bar" style="width: 85%; background: linear-gradient(135deg, #10b981, #06b6d4);"></div></div>
+                            </div>
+                            <div class="skill-meter-item">
+                                <div class="skill-label-group">
+                                    <span class="skill-name">Operating Systems</span>
+                                    <span class="skill-percent">82%</span>
+                                </div>
+                                <div class="skill-track"><div class="skill-bar" style="width: 82%; background: linear-gradient(135deg, #10b981, #06b6d4);"></div></div>
+                            </div>
+                            <div class="skill-meter-item">
+                                <div class="skill-label-group">
+                                    <span class="skill-name">Data Mining & Pattern Analytics</span>
+                                    <span class="skill-percent">88%</span>
+                                </div>
+                                <div class="skill-track"><div class="skill-bar" style="width: 88%; background: linear-gradient(135deg, #10b981, #06b6d4);"></div></div>
+                            </div>
+                            <div class="skill-meter-item">
+                                <div class="skill-label-group">
+                                    <span class="skill-name">Frontend Technologies (HTML/CSS/JS)</span>
+                                    <span class="skill-percent">80%</span>
+                                </div>
+                                <div class="skill-track"><div class="skill-bar" style="width: 80%; background: linear-gradient(135deg, #10b981, #06b6d4);"></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ==================== ACHIEVEMENTS TICKER ==================== -->
+        <div class="ticker-wrapper">
+            <div class="ticker-track">
+                <div class="ticker-card">
+                    <h4><i class="uil uil-award" style="color: var(--accent-cyan);"></i> GATE DA 2026 AIR 2412</h4>
+                    <p>Secured Top 3% nationwide in Data Science & Artificial Intelligence.</p>
+                </div>
+                <div class="ticker-card">
+                    <h4><i class="uil uil-star" style="color: var(--accent-violet);"></i> AICTE Rising Star 2026</h4>
+                    <p>Recognized among the top 1000 technical talents across India.</p>
+                </div>
+                <div class="ticker-card">
+                    <h4><i class="uil uil-file-bookmark-alt" style="color: var(--accent-emerald);"></i> IJSRET 2026 Publication</h4>
+                    <p>QUIC/HTTP-3 DDoS flood detection framework with Explainable AI (95.8% Acc).</p>
+                </div>
+                <div class="ticker-card">
+                    <h4><i class="uil uil-file-alt" style="color: var(--accent-cyan);"></i> IEEE PuneCon 2024 Publication</h4>
+                    <p>Automated Subjective Answer Sheet Evaluation System using LLMs & ML.</p>
+                </div>
+                <div class="ticker-card">
+                    <h4><i class="uil uil-medium-m" style="color: var(--accent-violet);"></i> Technical Blogger</h4>
+                    <p>Authoring high-impact AI articles on Medium (In Plain English).</p>
+                </div>
+                <div class="ticker-card">
+                    <h4><i class="uil uil-users-alt" style="color: var(--accent-emerald);"></i> Campus Mantri @ GFG</h4>
+                    <p>GeeksforGeeks (Aug 2024 – Apr 2025): organized hackathons & coding events.</p>
+                </div>
+                <div class="ticker-card">
+                    <h4><i class="uil uil-code-branch" style="color: var(--accent-cyan);"></i> Open Source Contributor</h4>
+                    <p>Active contributor in Hacktoberfest & GirlScript Summer of Code (GSSoC 2024).</p>
+                </div>
+                <div class="ticker-card">
+                    <h4><i class="uil uil-university" style="color: var(--accent-amber);"></i> IIT Madras Conclave</h4>
+                    <p>Selected for advanced algorithmic problem-solving in Competitive Coding Conclave.</p>
+                </div>
+
+                <!-- Duplicate for seamless scroll loop -->
+                <div class="ticker-card">
+                    <h4><i class="uil uil-award" style="color: var(--accent-cyan);"></i> GATE DA 2026 AIR 2412</h4>
+                    <p>Secured Top 3% nationwide in Data Science & Artificial Intelligence.</p>
+                </div>
+                <div class="ticker-card">
+                    <h4><i class="uil uil-star" style="color: var(--accent-violet);"></i> AICTE Rising Star 2026</h4>
+                    <p>Recognized among the top 1000 technical talents across India.</p>
+                </div>
+                <div class="ticker-card">
+                    <h4><i class="uil uil-file-bookmark-alt" style="color: var(--accent-emerald);"></i> IJSRET 2026 Publication</h4>
+                    <p>QUIC/HTTP-3 DDoS flood detection framework with Explainable AI (95.8% Acc).</p>
+                </div>
+                <div class="ticker-card">
+                    <h4><i class="uil uil-file-alt" style="color: var(--accent-cyan);"></i> IEEE PuneCon 2024 Publication</h4>
+                    <p>Automated Subjective Answer Sheet Evaluation System using LLMs & ML.</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ==================== CONTACT SECTION ==================== -->
+        <section class="section" id="contact">
+            <div class="container">
+                <div class="section__header">
+                    <span class="section__tag"><i class="uil uil-envelope"></i> Get In Touch</span>
+                    <h2 class="section__title">Let's Build Something Impactful</h2>
+                    <p class="section__subtitle">Whether it's AI research, backend architecture, freelance collaboration, or exciting opportunities — I'd love to connect!</p>
+                </div>
+
+                <div class="contact__grid">
+                    
+                    <!-- Left: Contact Details & Quick Copy Cards -->
                     <div>
-                        <a href="mailto:aarathisree.1535@gmail.com?subject=Your Subject Here&body=Your Message Here" class="button button--flex">
-                            Send message
-                            <i class="uil uil-message button__icon"></i>
-                        </a>
-                    </div>
-                </form>
-            </div>
+                        <div class="contact-info-cards">
+                            
+                            <!-- Email -->
+                            <div class="contact-info-card glass-card">
+                                <div class="contact-icon-text">
+                                    <i class="uil uil-envelope-alt contact-icon"></i>
+                                    <div>
+                                        <span class="contact-card-title">Email</span>
+                                        <div class="contact-card-value">aarathisree.1535@gmail.com</div>
+                                    </div>
+                                </div>
+                                <button class="copy-btn" data-copy="aarathisree.1535@gmail.com" title="Copy Email">
+                                    <i class="uil uil-copy"></i> Copy
+                                </button>
+                            </div>
 
+                            <!-- Phone -->
+                            <div class="contact-info-card glass-card">
+                                <div class="contact-icon-text">
+                                    <i class="uil uil-phone-alt contact-icon"></i>
+                                    <div>
+                                        <span class="contact-card-title">Phone / WhatsApp</span>
+                                        <div class="contact-card-value">+91-9381481266</div>
+                                    </div>
+                                </div>
+                                <button class="copy-btn" data-copy="+919381481266" title="Copy Phone Number">
+                                    <i class="uil uil-copy"></i> Copy
+                                </button>
+                            </div>
+
+                            <!-- Location -->
+                            <div class="contact-info-card glass-card">
+                                <div class="contact-icon-text">
+                                    <i class="uil uil-map-marker contact-icon"></i>
+                                    <div>
+                                        <span class="contact-card-title">Location</span>
+                                        <div class="contact-card-value">Andhra Pradesh, India</div>
+                                    </div>
+                                </div>
+                                <span class="tag-pill" style="color: var(--accent-emerald);">Open to Relocate / Remote</span>
+                            </div>
+
+                        </div>
+
+                        <!-- Social Pill Hub -->
+                        <div class="hero__socials" style="margin-top: 1.5rem;">
+                            <a href="https://www.linkedin.com/in/aarathisree-balla-349b66284/" target="_blank" class="social-pill" title="LinkedIn">
+                                <i class="uil uil-linkedin"></i>
+                                <span>LinkedIn</span>
+                            </a>
+                            <a href="https://github.com/Aarathi1535" target="_blank" class="social-pill" title="GitHub">
+                                <i class="uil uil-github"></i>
+                                <span>GitHub</span>
+                            </a>
+                            <a href="https://leetcode.com/u/aarathi_1535/" target="_blank" class="social-pill" title="LeetCode">
+                                <i class="uil uil-brackets-curly"></i>
+                                <span>LeetCode</span>
+                            </a>
+                            <a href="https://medium.com/@aarathisree.1535" target="_blank" class="social-pill" title="Medium">
+                                <i class="uil uil-medium-m"></i>
+                                <span>Medium</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right: Fast Dispatch Message Form -->
+                    <form action="mailto:aarathisree.1535@gmail.com" method="GET" class="contact-form glass-card">
+                        <div class="form-group">
+                            <label class="form-label" for="contact-name">Your Name</label>
+                            <input type="text" id="contact-name" name="name" class="form-input" placeholder="e.g. Dr. Alex Morgan" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="contact-subject">Subject</label>
+                            <input type="text" id="contact-subject" name="subject" class="form-input" placeholder="e.g. AI Research Collaboration / Backend Project Inquiry" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="contact-msg">Message</label>
+                            <textarea id="contact-msg" name="body" class="form-textarea" rows="5" placeholder="Hi Aarathisree, I'd like to discuss..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            <span>Send Message Directly</span>
+                            <i class="uil uil-message"></i>
+                        </button>
+                    </form>
+
+                </div>
+            </div>
         </section>
+
     </main>
 
-    <!--==================== FOOTER ====================-->
-    <footer class="footer">
 
-        <div class="footer__bg">
-            <div class="footer__container container grid">
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__top">
                 <div>
-                    <h1 class="footer__title">Aarathisree Balla</h1>
-                    <span class="footer__subtitle">Python Developer</span>
+                    <h2 class="footer__brand-title">Aarathisree <span class="text-gradient">Balla</span></h2>
+                    <p class="footer__brand-sub">Software & Data Enthusiast | AI & Backend Developer | Research Fellow @ CVIT IIIT-H</p>
                 </div>
 
-                <ul class="footer__links">
-                    <li>
-                        <a href="#services" class="footer__link">Services</a>
-                    </li>
-                    <li>
-                        <a href="#contact" class="footer__link">Contact</a>
-                    </li>
-                </ul>
-
-                <div class="footer__socials">
-                    <a href="mailto:aarathisree.1535@gmail.com" target="_blank" class="footer__social">
-                        <i class="uil uil-envelope"></i>
-                    </a>
-                    <a href="https://www.instagram.com/aarathi_1535/" target="_blank" class="footer__social">
-                        <i class="uil uil-instagram"></i>
-                    </a>
-                    
+                <div class="footer__nav">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#publications">Publications</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#entrepreneurship">Ventures</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#contact">Contact</a>
                 </div>
             </div>
-            <p class="footer__copy">&#169; Aarathisree. All rights reserved.</p>
+
+            <div class="footer__bottom">
+                <p>&copy; 2026 Aarathisree Balla. All rights reserved.</p>
+                <p>Engineered with Precision, Modern Aesthetics & Neural Interactive Tech.</p>
+            </div>
         </div>
     </footer>
 
-    <!--==================== SCROLL TOP ====================-->
-    <a href="#" class="scrollup" id="scroll-up">
-        <i class="uil uil-arrow-up scrollup__icon"></i>
-    </a>
-    
+    <!-- SCROLL TO TOP BUTTON -->
+    <div class="scroll-top-btn" id="scroll-top-btn" role="button" aria-label="Scroll to top" title="Scroll to top">
+        <i class="uil uil-arrow-up"></i>
+    </div>
 
-    <!--==================== SWIPER JS ====================-->
-    <script src="./packages/js/swiper-bundle.min.js"></script>
+    <!-- THREE.JS LIBRARY -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
-<!--==================== MAIN JS ====================-->
+    <!-- CUSTOM MAIN SCRIPT -->
     <script src="./packages/js/main.js"></script>
 
-    <!--==================== THREE.JS PARTICLE BACKGROUND ====================-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
-    <div id="particles-bg"></div>
-    <script>
-      // Spread the particles more
-      const PARTICLE_COUNT = 220;
-      const PARTICLE_SIZE = 1.7;
-      const PARTICLE_AREA = 350; // much larger area for more spread
-
-      let scene, camera, renderer, points, geometry, material, velocities = [], mouse = {x:0, y:0};
-      let currentTheme = document.body.classList.contains('dark-theme') ? 'dark' : 'light';
-
-      function getParticleMaterial(theme) {
-        return new THREE.PointsMaterial({
-          color: theme === 'dark' ? 0x00fff7 : 0x005479, // cyan for dark, blue for light
-          size: PARTICLE_SIZE,
-          transparent: true,
-          opacity: theme === 'dark' ? 0.88 : 0.62,
-          depthWrite: false,
-          blending: THREE.AdditiveBlending,
-        });
-      }
-
-      function initParticlesBG(theme) {
-        const width = window.innerWidth;
-        const height = window.innerHeight;
-
-        scene = new THREE.Scene();
-        camera = new THREE.PerspectiveCamera(75, width / height, 1, 1000);
-        camera.position.z = 230;
-
-        renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-        renderer.setClearColor(0x000000, 0);
-        renderer.setSize(width, height);
-
-        document.getElementById('particles-bg').appendChild(renderer.domElement);
-
-        geometry = new THREE.BufferGeometry();
-        const positions = [];
-
-        velocities = [];
-        for (let i = 0; i < PARTICLE_COUNT; i++) {
-          // More spread: use a sphere or large cube
-          const r = Math.cbrt(Math.random()) * (PARTICLE_AREA/2);
-          const theta = Math.random() * Math.PI * 2;
-          const phi = Math.acos(2 * Math.random() - 1);
-          const x = r * Math.sin(phi) * Math.cos(theta);
-          const y = r * Math.sin(phi) * Math.sin(theta);
-          const z = r * Math.cos(phi);
-          positions.push(x, y, z);
-
-          velocities.push(
-            (Math.random() - 0.5) * 0.22,
-            (Math.random() - 0.5) * 0.22,
-            (Math.random() - 0.5) * 0.22
-          );
-        }
-        geometry.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
-        material = getParticleMaterial(theme);
-        points = new THREE.Points(geometry, material);
-        scene.add(points);
-
-        window.addEventListener('mousemove', onMouseMove);
-        window.addEventListener('resize', onResize);
-
-        animate();
-      }
-
-      function onMouseMove(e) {
-        mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
-        mouse.y = -(e.clientY / window.innerHeight) * 2 + 1;
-      }
-
-      function onResize() {
-        camera.aspect = window.innerWidth / window.innerHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(window.innerWidth, window.innerHeight);
-      }
-
-      function animate() {
-        const pos = geometry.attributes.position;
-        for (let i = 0; i < PARTICLE_COUNT; i++) {
-          let idx = i * 3;
-          pos.array[idx]   += velocities[idx]   * 0.7;
-          pos.array[idx+1] += velocities[idx+1] * 0.7;
-          pos.array[idx+2] += velocities[idx+2] * 0.7;
-          // Boundaries (keep in a large box)
-          for (let j = 0; j < 3; j++) {
-            if (pos.array[idx+j] > PARTICLE_AREA/2 || pos.array[idx+j] < -PARTICLE_AREA/2) {
-              velocities[idx+j] = -velocities[idx+j];
-            }
-          }
-        }
-        pos.needsUpdate = true;
-        camera.position.x += (mouse.x * 40 - camera.position.x) * 0.03;
-        camera.position.y += (mouse.y * 40 - camera.position.y) * 0.03;
-        camera.lookAt(scene.position);
-
-        renderer.render(scene, camera);
-        requestAnimationFrame(animate);
-      }
-
-      // Remove previous particles renderer and scene
-      function clearParticlesBG() {
-        if (renderer) {
-          renderer.dispose();
-          if (renderer.domElement && renderer.domElement.parentNode) {
-            renderer.domElement.parentNode.removeChild(renderer.domElement);
-          }
-        }
-        if (geometry) geometry.dispose();
-        if (material) material.dispose();
-        scene = camera = renderer = points = geometry = material = null;
-      }
-
-      // Theme change listener
-      function updateParticlesTheme(theme) {
-        if (material) {
-          // Dispose of old material
-          material.dispose();
-          // Replace with new material
-          material = getParticleMaterial(theme);
-          points.material = material;
-        }
-      }
-
-      document.addEventListener("DOMContentLoaded", function() {
-        initParticlesBG(currentTheme);
-      });
-
-      // Theme toggle integration
-      const themeToggle = document.getElementById("theme-button");
-      if (themeToggle) {
-        themeToggle.addEventListener("click", () => {
-          setTimeout(() => {
-            currentTheme = document.body.classList.contains('dark-theme') ? 'dark' : 'light';
-            updateParticlesTheme(currentTheme);
-          }, 350);
-        });
-      }
-    </script>
-
-
 </body>
-
 </html>
-
-
-
-
-
-
-
-
-
