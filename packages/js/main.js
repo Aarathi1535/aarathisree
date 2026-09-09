@@ -43,22 +43,47 @@ function initThemeManager() {
     });
   }
 
-  // Mobile menu toggle
+  // Mobile menu toggle & interactions
   const mobileToggle = document.getElementById('mobile-toggle');
   const navMenu = document.getElementById('nav-menu');
   if (mobileToggle && navMenu) {
-    mobileToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('open');
-      mobileToggle.innerHTML = navMenu.classList.contains('open') 
+    const closeMenu = () => {
+      navMenu.classList.remove('open');
+      mobileToggle.innerHTML = '<i class="uil uil-apps"></i>';
+    };
+
+    mobileToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = navMenu.classList.toggle('open');
+      mobileToggle.innerHTML = isOpen 
         ? '<i class="uil uil-times"></i>' 
         : '<i class="uil uil-apps"></i>';
     });
 
-    document.querySelectorAll('.nav__link').forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('open');
-        mobileToggle.innerHTML = '<i class="uil uil-apps"></i>';
-      });
+    // Close when clicking any nav link or CTA button inside menu
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    // Close when clicking outside
+    document.addEventListener('click', (e) => {
+      if (navMenu.classList.contains('open') && !navMenu.contains(e.target) && !mobileToggle.contains(e.target)) {
+        closeMenu();
+      }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navMenu.classList.contains('open')) {
+        closeMenu();
+      }
+    });
+
+    // Reset when resizing to desktop
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 1080 && navMenu.classList.contains('open')) {
+        closeMenu();
+      }
     });
   }
 }
