@@ -1,6 +1,6 @@
 # Balla Aarathisree - Portfolio & Profile
 
-**Software & Data Enthusiast | AI & Backend Developer**  
+**AI/ML Researcher | Software Engineer (Computer Vision • LLMs • Intelligent Systems)**  
 📧 **Email:** [aarathisree.1535@gmail.com](mailto:aarathisree.1535@gmail.com) | 📞 **Phone:** +91-9381481266 | 📍 **Location:** Andhra Pradesh, India  
 🔗 **LinkedIn:** [linkedin.com/in/aarathisree-balla-349b66284](https://www.linkedin.com/in/aarathisree-balla-349b66284) | 💻 **GitHub:** [github.com/Aarathi1535](https://github.com/Aarathi1535) | ⚡ **LeetCode:** [leetcode.com/u/aarathi_1535/](https://leetcode.com/u/aarathi_1535/) | ✍️ **Medium:** [In Plain English](https://medium.com/@aarathisree.1535)
 
@@ -64,7 +64,7 @@
    [*"An Intelligent Machine Learning Framework for Detecting QUIC-Based Traffic Flood Attacks in Encrypted HTTP/3 Networks"*](https://ijsret.com/2026/04/15/an-intelligent-machine-learning-framework-for-detecting-quic-based-traffic-flood-attacks-in-encrypted-http-3-networks/)  
    *Vol. 12, Issue 2, Mar-Apr 2026 | ISSN: 2395-566X*
 2. **IEEE PuneCon 2024:**  
-   *"Revolutionizing the Future of Automated Subjective Answer Sheet Evaluation System with Machine Learning and LLMs"*  
+   [*"Revolutionizing the Future of Automated Subjective Answer Sheet Evaluation System with Machine Learning and LLMs"*](https://ieeexplore.ieee.org/document/10895748)  
    **Authors:** Balla Aarathisree, Society for Data Science Research Team
 
 ---
