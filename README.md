@@ -61,7 +61,7 @@
 
 ## 📚 Publications
 1. **International Journal of Scientific Research & Engineering Trends (IJSRET 2026):**  
-   *"An Intelligent Machine Learning Framework for Detecting QUIC-Based Traffic Flood Attacks in Encrypted HTTP/3 Networks"*  
+   [*"An Intelligent Machine Learning Framework for Detecting QUIC-Based Traffic Flood Attacks in Encrypted HTTP/3 Networks"*](https://ijsret.com/2026/04/15/an-intelligent-machine-learning-framework-for-detecting-quic-based-traffic-flood-attacks-in-encrypted-http-3-networks/)  
    *Vol. 12, Issue 2, Mar-Apr 2026 | ISSN: 2395-566X*
 2. **IEEE PuneCon 2024:**  
    *"Revolutionizing the Future of Automated Subjective Answer Sheet Evaluation System with Machine Learning and LLMs"*  
