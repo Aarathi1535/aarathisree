@@ -108,7 +108,7 @@ export const HighlightsSection: React.FC = () => {
             style={{ x }}
             className="flex gap-6 sm:gap-8 items-stretch will-change-transform py-4"
           >
-            {bentoAccolades.map((item, idx) => (
+            {bentoAccolades.map((item) => (
               <div
                 key={item.title}
                 className="w-[340px] sm:w-[420px] lg:w-[480px] shrink-0 relative p-8 sm:p-9 rounded-xl border border-[#800020]/60 bg-[#120408]/95 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.9)] overflow-hidden transition-all duration-300 hover:border-[#C04A6E] group flex flex-col justify-between"

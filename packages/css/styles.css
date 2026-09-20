@@ -216,6 +216,7 @@ ul {
 .text-gradient {
   background: var(--gradient-ai);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
 }
@@ -223,6 +224,7 @@ ul {
 .text-gradient-purple {
   background: var(--gradient-purple);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
 }
@@ -230,6 +232,7 @@ ul {
 .text-gradient-cyan {
   background: var(--gradient-neon);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
 }
@@ -306,6 +309,7 @@ body.light-theme .section__tag {
   padding: 1px;
   background: var(--gradient-glass);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   pointer-events: none;
@@ -1364,6 +1368,7 @@ body.light-theme .hero__terminal {
   margin-bottom: 1.2rem;
   display: -webkit-box;
   -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
