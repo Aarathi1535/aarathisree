@@ -15,7 +15,7 @@
 html, body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
+  overflow-x: clip;
   background-color: #070204;
   color: #F3EBEB;
   font-family: 'Montserrat', sans-serif;

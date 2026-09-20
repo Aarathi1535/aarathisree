@@ -28,7 +28,7 @@ export const AboutSection: React.FC = () => {
   return (
     <section 
       id="about" 
-      className="relative w-screen bg-[#070204] text-[#F3EBEB] font-sans selection:bg-[#800020] selection:text-white py-24 px-6 sm:px-12 lg:px-20 overflow-hidden"
+      className="relative w-full bg-[#070204] text-[#F3EBEB] font-sans selection:bg-[#800020] selection:text-white py-24 px-6 sm:px-12 lg:px-20 overflow-hidden"
     >
       {/* Background Burgundy Ambient Glows */}
       <div className="absolute top-1/3 left-1/6 w-[36rem] h-[36rem] bg-[#800020]/15 rounded-full blur-[180px] pointer-events-none" />

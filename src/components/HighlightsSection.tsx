@@ -52,13 +52,13 @@ export const HighlightsSection: React.FC = () => {
   });
 
   // Smooth horizontal translation of cards based on vertical scroll
-  const x = useTransform(scrollYProgress, [0, 1], ['1%', '-65%']);
+  const x = useTransform(scrollYProgress, [0, 1], ['0%', '-68%']);
 
   return (
     <section
       id="highlights"
       ref={targetRef}
-      className="relative h-[260vh] bg-[#070204] text-[#F3EBEB] font-sans selection:bg-[#800020] selection:text-white"
+      className="relative h-[300vh] bg-[#070204] text-[#F3EBEB] font-sans selection:bg-[#800020] selection:text-white"
     >
       {/* Sticky Viewport Container */}
       <div className="sticky top-0 h-screen w-full flex flex-col justify-center overflow-hidden px-6 sm:px-12 lg:px-20 z-10">

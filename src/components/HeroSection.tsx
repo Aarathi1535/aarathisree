@@ -53,7 +53,7 @@ export const HeroSection: React.FC = () => {
   }, []);
 
   return (
-    <section id="home" className="relative w-screen h-screen overflow-hidden bg-black text-[#F3EBEB] font-sans selection:bg-[#800020] selection:text-white cursor-none">
+    <section id="home" className="relative w-full h-screen overflow-hidden bg-black text-[#F3EBEB] font-sans selection:bg-[#800020] selection:text-white cursor-none">
       {/* ================= 1. MINIMAL CUSTOM CURSOR ================= */}
       {cursorPos.x >= 0 && (
         <motion.div
