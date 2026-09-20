@@ -6,7 +6,6 @@ import { ExperienceSection } from './components/ExperienceSection';
 import { ProjectsSection } from './components/ProjectsSection';
 import { VenturesSection } from './components/VenturesSection';
 import { SkillsSection } from './components/SkillsSection';
-import { TickerSection } from './components/TickerSection';
 import { ContactSection } from './components/ContactSection';
 
 function App() {
@@ -36,10 +35,7 @@ function App() {
       {/* 8. Technical Proficiency & Stack */}
       <SkillsSection />
 
-      {/* 9. Achievements Ticker */}
-      <TickerSection />
-
-      {/* 10. Contact & Footer */}
+      {/* 9. Contact & Footer */}
       <ContactSection />
     </div>
   );
