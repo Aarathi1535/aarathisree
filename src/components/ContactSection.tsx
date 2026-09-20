@@ -7,9 +7,6 @@ export const ContactSection: React.FC = () => {
   const [errorMessage, setErrorMessage] = useState('');
   const [copied, setCopied] = useState<string | null>(null);
 
-  // Web3Forms Public Access Key (Safe for client-side use)
-  const ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || 'YOUR_ACCESS_KEY_HERE';
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (status === 'loading') return;
@@ -19,17 +16,14 @@ export const ContactSection: React.FC = () => {
 
     try {
       const payload = {
-        access_key: ACCESS_KEY,
         name: formData.name.trim(),
         email: formData.email.trim(),
         subject: formData.subject.trim() || `Portfolio Contact Message from ${formData.name.trim()}`,
         message: formData.message.trim(),
-        from_name: formData.name.trim(),
-        replyto: formData.email.trim(),
-        to_email: 'aarathisree.1535@gmail.com',
+        _replyto: formData.email.trim(),
       };
 
-      const response = await fetch('https://api.web3forms.com/submit', {
+      const response = await fetch('https://formspree.io/f/mkjgjgqa', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -40,12 +34,18 @@ export const ContactSection: React.FC = () => {
 
       const data = await response.json();
 
-      if (response.ok && data.success) {
+      if (response.ok) {
         setStatus('success');
         setFormData({ name: '', email: '', subject: '', message: '' });
       } else {
         setStatus('error');
-        setErrorMessage(data.message || 'Submission failed. Please check your details or email directly.');
+        if (data && data.errors && Array.isArray(data.errors)) {
+          setErrorMessage(data.errors.map((err: { message: string }) => err.message).join(', '));
+        } else if (data && data.error) {
+          setErrorMessage(data.error);
+        } else {
+          setErrorMessage('Submission failed. Please check your details or email directly.');
+        }
       }
     } catch (err) {
       console.error('Contact form submission error:', err);
