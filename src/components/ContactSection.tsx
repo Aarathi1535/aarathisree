@@ -3,18 +3,55 @@ import { motion } from 'framer-motion';
 
 export const ContactSection: React.FC = () => {
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
   const [copied, setCopied] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // Web3Forms Public Access Key (Safe for client-side use)
+  const ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || 'YOUR_ACCESS_KEY_HERE';
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const mailtoUrl = `mailto:aarathisree.1535@gmail.com?subject=${encodeURIComponent(
-      formData.subject || `Message from ${formData.name}`
-    )}&body=${encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-    )}`;
-    window.open(mailtoUrl, '_blank');
-    setSent(true);
+    if (status === 'loading') return;
+
+    setStatus('loading');
+    setErrorMessage('');
+
+    try {
+      const payload = {
+        access_key: ACCESS_KEY,
+        name: formData.name.trim(),
+        email: formData.email.trim(),
+        subject: formData.subject.trim() || `Portfolio Contact Message from ${formData.name.trim()}`,
+        message: formData.message.trim(),
+        from_name: formData.name.trim(),
+        replyto: formData.email.trim(),
+        to_email: 'aarathisree.1535@gmail.com',
+      };
+
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setStatus('success');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        setStatus('error');
+        setErrorMessage(data.message || 'Submission failed. Please check your details or email directly.');
+      }
+    } catch (err) {
+      console.error('Contact form submission error:', err);
+      setStatus('error');
+      setErrorMessage('Network error occurred. Please try again or reach out directly via email.');
+    }
   };
 
   const handleCopy = (text: string, label: string) => {
@@ -183,20 +220,21 @@ export const ContactSection: React.FC = () => {
             <div className="absolute bottom-0 left-0 w-3 h-3 border-b border-l border-[#800020]" />
             <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-[#800020]" />
 
-            {sent ? (
+            {status === 'success' ? (
               <div className="py-16 text-center space-y-4">
-                <div className="inline-flex items-center justify-center w-10 h-10 rounded-full border border-[#C04A6E] text-[#C04A6E] text-sm">
+                <div className="inline-flex items-center justify-center w-12 h-12 rounded-full border border-[#C04A6E] text-[#C04A6E] text-base shadow-[0_0_15px_rgba(192,74,110,0.3)]">
                   ✓
                 </div>
-                <h3 className="text-3xl text-white font-normal uppercase" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
-                  TRANSMISSION REGISTERED
+                <h3 className="text-3xl text-white font-normal uppercase tracking-wide" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
+                  TRANSMISSION DELIVERED
                 </h3>
-                <p className="text-xs text-[#CDB4B4] font-light" style={{ fontFamily: "'Montserrat', sans-serif" }}>
-                  Email client opened successfully.
+                <p className="text-xs sm:text-sm text-[#CDB4B4] font-light max-w-md mx-auto leading-relaxed" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+                  Your message has been delivered directly to Aarathisree's inbox at <strong className="text-white font-medium">aarathisree.1535@gmail.com</strong>.
                 </p>
                 <button
-                  onClick={() => setSent(false)}
-                  className="mt-4 px-4 py-2 border border-[#800020] text-xs text-[#C04A6E] hover:border-[#C04A6E] transition-colors rounded-sm cursor-pointer"
+                  type="button"
+                  onClick={() => setStatus('idle')}
+                  className="mt-4 px-5 py-2.5 border border-[#800020] text-xs text-[#C04A6E] hover:border-[#C04A6E] hover:bg-[#800020]/30 transition-colors rounded-sm cursor-pointer tracking-wider uppercase font-mono"
                 >
                   SEND ANOTHER MESSAGE
                 </button>
@@ -204,6 +242,18 @@ export const ContactSection: React.FC = () => {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
                 
+                {status === 'error' && (
+                  <div className="p-3.5 rounded-sm border border-[#C04A6E]/60 bg-[#4A0018]/40 text-[#F3EBEB] text-xs space-y-1">
+                    <p className="font-medium text-[#C04A6E] flex items-center space-x-1.5">
+                      <span>⚠</span>
+                      <span>Unable to transmit message</span>
+                    </p>
+                    <p className="text-[11.5px] text-[#CDB4B4]">
+                      {errorMessage || 'Please try again or email directly to aarathisree.1535@gmail.com.'}
+                    </p>
+                  </div>
+                )}
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
                     <span className="block text-[9.5px] font-mono tracking-[0.2em] uppercase text-[#947878] mb-2">
@@ -211,11 +261,13 @@ export const ContactSection: React.FC = () => {
                     </span>
                     <input
                       type="text"
+                      name="name"
                       required
+                      disabled={status === 'loading'}
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       placeholder="e.g. Dr. Alex Morgan"
-                      className="w-full bg-[#1A0008]/60 border border-[#800020]/40 focus:border-[#C04A6E] text-xs text-white placeholder-[#947878]/50 px-4 py-3 outline-none rounded-sm transition-colors"
+                      className="w-full bg-[#1A0008]/60 border border-[#800020]/40 focus:border-[#C04A6E] disabled:opacity-50 text-xs text-white placeholder-[#947878]/50 px-4 py-3 outline-none rounded-sm transition-colors"
                       style={{ fontFamily: "'Montserrat', sans-serif" }}
                     />
                   </div>
@@ -226,11 +278,13 @@ export const ContactSection: React.FC = () => {
                     </span>
                     <input
                       type="email"
+                      name="email"
                       required
+                      disabled={status === 'loading'}
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="alex@organization.com"
-                      className="w-full bg-[#1A0008]/60 border border-[#800020]/40 focus:border-[#C04A6E] text-xs text-white placeholder-[#947878]/50 px-4 py-3 outline-none rounded-sm transition-colors"
+                      className="w-full bg-[#1A0008]/60 border border-[#800020]/40 focus:border-[#C04A6E] disabled:opacity-50 text-xs text-white placeholder-[#947878]/50 px-4 py-3 outline-none rounded-sm transition-colors"
                       style={{ fontFamily: "'Montserrat', sans-serif" }}
                     />
                   </div>
@@ -242,11 +296,13 @@ export const ContactSection: React.FC = () => {
                   </span>
                   <input
                     type="text"
+                    name="subject"
                     required
+                    disabled={status === 'loading'}
                     value={formData.subject}
                     onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                     placeholder="e.g. AI Research Collaboration / Backend Project Inquiry"
-                    className="w-full bg-[#1A0008]/60 border border-[#800020]/40 focus:border-[#C04A6E] text-xs text-white placeholder-[#947878]/50 px-4 py-3 outline-none rounded-sm transition-colors"
+                    className="w-full bg-[#1A0008]/60 border border-[#800020]/40 focus:border-[#C04A6E] disabled:opacity-50 text-xs text-white placeholder-[#947878]/50 px-4 py-3 outline-none rounded-sm transition-colors"
                     style={{ fontFamily: "'Montserrat', sans-serif" }}
                   />
                 </div>
@@ -256,22 +312,25 @@ export const ContactSection: React.FC = () => {
                     // MESSAGE
                   </span>
                   <textarea
+                    name="message"
                     required
                     rows={4}
+                    disabled={status === 'loading'}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     placeholder="Hi Aarathisree, I'd like to discuss..."
-                    className="w-full bg-[#1A0008]/60 border border-[#800020]/40 focus:border-[#C04A6E] text-xs text-white placeholder-[#947878]/50 p-4 outline-none rounded-sm transition-colors resize-none"
+                    className="w-full bg-[#1A0008]/60 border border-[#800020]/40 focus:border-[#C04A6E] disabled:opacity-50 text-xs text-white placeholder-[#947878]/50 p-4 outline-none rounded-sm transition-colors resize-none"
                     style={{ fontFamily: "'Montserrat', sans-serif" }}
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full py-3.5 border border-[#800020] bg-[#4A0018]/90 hover:border-[#C04A6E] hover:bg-[#800020] text-[#F3EBEB] hover:text-white text-xs font-medium tracking-[0.25em] uppercase transition-all duration-300 shadow-[0_4px_20px_rgba(128,0,32,0.4)] cursor-pointer rounded-sm"
+                  disabled={status === 'loading'}
+                  className="w-full py-3.5 border border-[#800020] bg-[#4A0018]/90 hover:border-[#C04A6E] hover:bg-[#800020] disabled:opacity-60 disabled:cursor-not-allowed text-[#F3EBEB] hover:text-white text-xs font-medium tracking-[0.25em] uppercase transition-all duration-300 shadow-[0_4px_20px_rgba(128,0,32,0.4)] cursor-pointer rounded-sm"
                   style={{ fontFamily: "'Montserrat', sans-serif" }}
                 >
-                  SEND MESSAGE DIRECTLY ↗
+                  {status === 'loading' ? 'TRANSMITTING MESSAGE...' : 'SEND MESSAGE DIRECTLY ↗'}
                 </button>
 
               </form>
