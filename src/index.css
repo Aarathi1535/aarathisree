@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Herr+Von+Muellerhoff&family=Montserrat:wght@200;300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  --burgundy-primary: #800020;
+  --burgundy-deep: #4A0018;
+  --burgundy-dark-wine: #2A000D;
+  --burgundy-highlight: #A61B45;
+  --burgundy-accent: #C04A6E;
+  --bg-dark: #070204;
+  --text-main: #F3EBEB;
+  --text-muted: #B89E9E;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: #070204;
+  color: #F3EBEB;
+  font-family: 'Montserrat', sans-serif;
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: #800020;
+  color: #FFFFFF;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #070204;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4A0018;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #800020;
+}
